@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+
+<template>
+		<section class="todoapp" doo-class="show" style="position:relative">
+			<a name="todo" />
+			<header class="header">
+				<h1>todoo</h1>
+				<!-- <span data-set="[100,1000,5000,10000,20000]" onclick="self.addN('{{0}}')">Add {{0}} | </span> -->
+				<input class="new-todo" autofocus autocomplete="off" placeholder="What needs to be done?" v-model="newTodo" onkeyup="ToDoo[0].addTodo(event)">
+			</header>
+			<section class="main"> 
+				<input id="toggle-all" class="toggle-all" type="checkbox" >
+				<label onclick="ToDoo[0].toggleAll(this)" for="toggle-all">Mark all as complete.</label>
+				<ul class="todo-list container">
+					<li data-set="todoList" class="todo"  key="{{$_id}}" >
+						<div class="view">
+							<input class="toggle" checked="{{completed}}"  type="checkbox"  onmouseup="self.toggleCheck(this, '{{ i() }}')" value="{{completed}}" />
+							<label ondblclick="self.editTodo(this, '{{ i() }}')"  class="{{completed}}">{{todo}}</label>
+							<button class="destroy" key="{{$_id}}" onclick="self.removeTodo(this.key)"></button>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<footer class="footer" v-show="todos.length">
+				<span data-set="dummy" class="todo-count">
+					<strong>{{ getRecCount() }} item{{ getS() }}</strong>
+				</span>
+				<ul class="filters">
+
+					<li data-set="todoFilters"><a  href="#todo" onclick="self.setFilter('{{ i() }}')" class="{{selected}}">{{text}}</a></li>
+				</ul>
+				<button class="clear-completed" onclick="ToDoo[0].removeCompleted()" v-show="todos.length > remaining">
+					Clear completed
+				</button>
+			</footer>
+		</section>
+
+
+	<style type="text/css">
+
+		.main {
+			position: relative;
+			z-index: 0 !important;  
+			border-top: 1px solid #e6e6e6;
+		}
+
+		#allTodos {
+			top:0;
+			margin-top:1rem;
+			position:absolute;
+			top:0;
+			right:0;
+			background-color:#eee;
+			width:40%;
+		}
+
+	</style>
+
+</template>
