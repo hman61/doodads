@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Doo - Card</title>
+
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <link rel="preload" as="style"  href="/assets/css/styles.css"/>
+    <link rel="stylesheet"          href="/assets/css/styles.css"  />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <link rel="preload" as="style" href="/assets/css/doo/doo-flex-row.css"  />
+    <link rel="stylesheet" as="style" href="/assets/css/doo/doo-flex-row.css"  />
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.mock.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@0.9.13/dist/doo.ui.min.js"></script> -->
+    <!-- <script type="module" src="/dist/doo.ui.min.js"></script> -->
+    <script type="module" src="/dist/js/doo.ui.js"></script>
+
+
+  </head>
+  <doo-datastore> 
+    <!-- Global Data store and data access object refered in templates as Doo.DAO -->
+    <!-- You can add multiple data nodes in this section -->
+    <data data-name="athletes" data-fetch="../olympics/data/athletes.json" />
+  </doo-datastore>
+
+  <body>
+    <h3>Doo - Card</h3>
+    <!-- Based on https://tailwindcss.com/components/cards/ -->
+    <script type="module" defer src="card.js"></script>
+    <doo-card xcontext="document" template="./card.html"></doo-card>
+  <script type="module" defer src="../olympics/js/Olympics.js"></script>
+  <doo-olympics template="../olympics/templates/olympics.html"></doo-olympics>
+
+  </body>
+</html>

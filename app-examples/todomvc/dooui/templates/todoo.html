@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<template>
+	<body>
+		<section class="todoapp">
+			<link rel="stylesheet" href="css/todomvc-common/base.css">
+			<link rel="stylesheet" href="css/todomvc-app-css/index.css">
+		
+			<header class="header">
+				<h1>todos</h1>
+				<input id="new-todo" class="new-todo" autocomplete="off" placeholder="What needs to be done?"  onkeyup="ToDoo[0].addTodo(event)">
+			</header>
+			<section class="main"> 
+				<input onchange="ToDoo[0].allDone(this)" id="toggle-all" class="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete.</label>
+				<ul class="todo-list container">
+					<li for-each="todos" data-src="this.data" class="todo {{ getCompleted() }}">
+						<div class="view">
+							<input class="toggle" checked="{{completed}}" type="checkbox" onclick="ToDoo[0].toggleCheck('{{ i() }}')" value="{{completed}}" />
+							<label ondblclick="ToDoo[0].editTodo(this)">{{ title }}</label>
+							<button class="destroy" onclick="ToDoo[0].removeTodo('{{id}}')"></button>
+						</div>
+						<input class="edit" type="text"  onblur="ToDoo[0].doneEdit(event, '{{ i() }}', 1)" onkeyup="ToDoo[0].doneEdit(event, '{{ i() }}')">
+					</li>
+				</ul>
+			</section>
+			<footer class="footer hide">
+				<span for-each="recCount" data-src="this.data" class="todo-count">
+					<strong>{{ getRecCount() }} item{{ getS() }}</strong>
+				</span>
+				<ul class="filters">
+					<li for-each="todoFilters" data-src="this.data"><a  href="#{{ text }}" onclick="ToDoo[0].renderFilter('{{ i() }}')" class="{{selected}}">{{text}}</a></li>
+				</ul>
+				<button for-each="recCount" data-src="this.data" class="clear-completed {{ hide() }}" onclick="ToDoo[0].removeCompleted()">
+					Clear completed
+				</button>
+			</footer>
+		</section>
+		<footer class="info">
+			<p>Double-click to edit a todo.</p>
+			<p>Written by <a target="_blank" href="https://www.linkedin.com/in/henrikjaven/">Henrik Javen</a></p>
+			<p>Powerd by <a target="_blank" href="https://dooui.org">&lt;doo-ui /&gt;</a></p>
+			<p>Soon part of <a target="_blank" href="http://todomvc.com">TodoMVC</a></p>
+		</footer>
+		<style>
+			.hide {
+				display:none;
+			}
+		</style>
+	</body>
+</template>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Olympics - Medal Count</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
+		<script type="module" src="/dist/doo.ui.min.js"></script>
+		<script type="module" defer src="./js/Olympics.js"></script>
+		
+
+	</head>
+	<body>
+		<h3>Olympics Medal Count.</h3>
+		
+		<doo-datastore> 
+			<!-- Global Data store and data access object refered in templates as Doo.DAO -->
+			<!-- You can add multiple data nodes in this section -->
+			<data data-name="athletes" data-fetch="data/athletes.json" />
+		</doo-datastore>
+
+		<doo-olympics template="./templates/olympics.html"></doo-olympics>
+	</body>
+</html>
+

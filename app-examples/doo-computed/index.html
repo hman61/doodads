@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
+<script type="module" src="/dist/doo.ui.min.js"></script>
+<script type="module" src="./Funcsample.js"></script>
+
+<template id="t1">
+    <section>
+        <ul data-src="this.data" for-each="sample" >
+            <li> {{ i() }} |  {{ n() }} | {{ letter.toUpperCase() }} | {{ first.substring(0,3) }} | {{  getName() }}</li>
+        </ul>
+    </section>  
+</template> 
+  
+<doo-funcsample template="#t1"></doo-funcsample>

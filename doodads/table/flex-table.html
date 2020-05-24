@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Table</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.col-container {
+			display: table;
+			width: 100%;
+		}
+		.flex-container {
+			display: flex;
+			width: 100%;
+		}
+		.fcol {
+			flex: 1;
+			padding: 16px;
+		}
+
+
+		.col {
+			display: table-cell;
+			padding: 16px;
+		}
+
+		td {
+			vertical-align: top;
+		}
+
+@media (min-width: 769px) {
+  .tr {
+    white-space: nowrap;
+  }
+}
+@media (max-width: 769px) {
+  .tr {
+	white-space: wrap;
+	display: block;
+  }
+}
+
+		
+	</style>
+</head>
+
+<body>
+
+
+	<h2>Equal Height Columns</h2>
+	<p>Make the columns match the height of the tallest column.</p>
+
+	<div class="col-container">
+		<div class="col" style="background:orange">
+			<h2>Column 1</h2>
+			<p>Hello World</p>
+		</div>
+
+		<div class="col" style="background:yellow">
+			<h2>Column 2</h2>
+			<p>Hello World!</p>
+			<p>Hello World!</p>
+			<p>Hello World!</p>
+			<p>Hello World!</p>
+		</div>
+
+		<div class="col" style="background:orange">
+			<h2>Column 3</h2>
+			<p>Some other text..</p>
+			<p>Some other text..</p>
+		</div>
+	</div>
+
+
+	<hr />
+	<table border="0"  width="100%" cellpadding="16" cellspacing="0">
+		<tr  style="background:orange">
+			<td>
+				<h2>Column 1</h2>
+				<p>Hello World</p>
+			</td>
+			<td style="background:yellow">
+				<h2>Column 2</h2>
+				<p>Hello World!</p>
+				<p>Hello World!</p>
+				<p>Hello World!</p>
+				<p>Hello World!</p>
+			</td>
+			<td>
+				<h2>Column 3</h2>
+				<p>Some other text..</p>
+				<p>Some other text..</p>
+			</td>
+		</tr>
+	</table>
+	<hr />
+
+	<div class="flex-container">
+		<div class="fcol" style="background:orange">
+			<h2>Column 1</h2>
+			<p>Hello World</p>
+		</div>
+
+		<div class="fcol" style="background:yellow">
+			<h2>Column 2</h2>
+			<p>Hello World!</p>
+			<p>Hello World!</p>
+			<p>Hello World!</p>
+			<p>Hello World!</p>
+		</div>
+
+		<div class="fcol" style="background:orange">
+			<h2>Column 3</h2>
+			<p>Some other text..</p>
+			<p>Some other text..</p>
+		</div>
+	</div>
+
+
+
+</body>
+
+</html>

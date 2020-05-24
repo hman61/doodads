@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<template>
+	<section>
+        <link rel="preload" as="style" href="/assets/css/doo/doo-flex-row.css"  /> 
+        <link rel="stylesheet"  href="/assets/css/doo/doo-flex-row.css"  />
+    
+        <div class="contacts" data-src="this.data" for-each="contacts">
+            <div class="small" onclick="self.edit(this)">{{ row() }}</div>
+            <div class="name" >{{ fname }} {{lname}}</div>
+            <div class="city">City:<br/>{{ location.city }}</div>
+            <div>                       
+                <!-- <doo-card key="{{ i() }}"  template="/components/card/card.html"></doo-card> -->
+                <doo-card key="{{ i() }}"  template="/doodads/card/card.html"
+                    data-map="car,lorem(),avatar,fname,lname,location.city,date"
+                ></doo-card>
+            </div>
+        </div>
+        <style>
+            .contacts {
+                border: 1px solid grey;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                margin-bottom: 1rem;
+                background-color:white;
+            }
+            .small {
+                display: flex;
+                flex-grow: 0 !important;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                margin-left: 0.5rem !important;
+                justify-self: flex-end;
+                font-size: larger;
+            }
+
+            .name {
+                font-weight: bold; 
+                font-size: larger;
+                margin-right: 2em;
+            }
+            .city {
+                font-size: larger;
+                white-space: nowrap;
+                margin-right: 2em;
+            }
+        </style>
+	</section>
+</template>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<template>
+  <section>
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+    <ul  class="flex justify-center">
+      <li data-src="Doo.DAO" for-each="${for-each}">
+        <a class="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white" href="#">{{ $1 }}</a>
+      </li>
+    </ul>
+    <style>
+      @media (min-width: 479px) {
+        li {
+            margin-right: 0.5rem;
+        }
+        li:first-child {
+            margin-left: auto;
+            margin-right: 0.5rem;
+        }
+        li:last-child {
+            margin-right: auto;
+        }
+      }  
+      @media (max-width: 479px) {
+        .flex {
+          flex-direction: column;
+        }        
+        li {
+          margin: 0 auto;
+          width: 30%;
+          margin-bottom: 0.5rem;
+        }
+        li:last-child {
+          margin-bottom: 0;
+        }
+        li > a {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </section>
+</template>

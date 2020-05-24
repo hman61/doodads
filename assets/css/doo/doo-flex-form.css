@@ -1,0 +1,33 @@
+.form-container {
+    display: flex;
+}
+.h-form, .v-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    font-family: roboto;
+    font-size: 0.8rem;
+    background-color: #eee;
+    border: 1px solid grey;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+}
+
+/* horizontal form */
+.h-form > div {
+    margin-right: 0.5rem;
+}
+.h-form input, .h-form button {
+    display: block;
+}
+
+/* vertical form */
+.v-form {
+    flex-direction: column;
+}
+.v-form > div {
+    flex-shrink: 1;
+}
+.v-form input, .v-form button, .v-form label {
+    display: flex;
+}

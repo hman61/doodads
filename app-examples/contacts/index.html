@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+		<title>Doo UI</title>
+		<script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.mock.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
+		<script type="module" src="/dist/doo.ui.min.js"></script>
+		<!-- <script type="module" src="/src/js/doo.ui.js"></script>  -->
+	</head>
+
+	<body>
+		<h3>Contacts - Example</h3>
+		<link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
+		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
+		<button style="margin-bottom:1rem" onclick="Contacts[0].addMore(50000)">Add 50,000 Contacts</button>
+
+		<div class="form-container">
+			<div class="h-form">
+				<div>
+					<label>First</label>
+					<input id="fname" value="">
+				</div>
+				<div>	
+					<label>M.I</label>
+					<input title="Middle Initial" id="middle" value="" size="1">
+				</div>
+				<div>
+					<label>Last</label>
+					<input id="lname" value="">
+				</div>
+				<div>
+					<label>City</label>
+					<input id="location.city" value="">
+				</div>	
+				<div>
+					<label>&nbsp;</label>
+					<button onclick="Contacts[0].add(this.parentElement.parentElement)">Add</button>
+				</div>	
+			</div>
+		</div>
+		
+		<script type="module" defer src="js/Contacts.js"></script>
+		<doo-contacts doo-db="contacts" template="templates/contacts.html"></doo-contacts>
+
+	</body>
+
+</html>
+
