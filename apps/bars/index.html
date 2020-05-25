@@ -14,29 +14,10 @@
 
 		<script src="/dist/doo.ui.min.js"></script>
 		<script type="module" src="/dist/doo-ui.element.js"></script>
-
-		<!-- <doo-datastore> 
-			<data data-name="menu" data-fetch="[Home,Products2,Sample,Download,About]" />
-		</doo-datastore> -->
 		<script>
-			window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
+			//window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
+			window.contacts = new Mock('circle', 5)
 		</script>
-		<script type="module">
-			window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
-			// Doo.define(
-			// 	class Ui extends Doo {
-				
-			// 	constructor() {
-			// 		super()
-			// 		this.data = {}
-			// 	}
-			// 	async connectedCallback() {
-			// 		this.data[this.getAttribute('data-name')] = await this.getDataObj(this.getAttribute('data-fetch'))
-			// 		this.template = this.getAttribute('template')
-			// 		super.connectedCallback()
-			// 	}
-			// })
-  		</script>
 
 	</head>
 
@@ -66,9 +47,22 @@
 				</div>	
 			</div>			
 		</div>
-      <doo-hello template="#t1"></doo-hello>
-  		<doo-ui data-name="contacts" data-fetch="window.coolio" template="/doodads/bar/bar.html" 
-		data-map="fname,lname,city"></doo-ui>
+		<h3>circle/circle.html</h3>
+		<doo-ui 
+			data-name="contacts"
+			for-each="contacts"
+			data-fetch="window.contacts" 
+			template="/doodads/circle/circle.html"
+			data-map="avatar">
+		</doo-ui>
+		<h3>bar/bar.html (Mock Contacts)</h3>
+		<doo-ui 
+			data-name="contacts"
+			for-each="contacts"
+			data-fetch="window.contacts"
+			template="/doodads/bar/bar.html" 
+			data-map="fname">
+		</doo-ui>
 		<h3>bar/bar.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-400" 

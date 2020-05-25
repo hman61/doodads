@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<template>
+  <section class="bg-gray-200 p-2">
+    <link href="/assets/css/styles.css" rel="preload" as="style" />
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+    <div data-src="Doo.DAO" for-each="${for-each}" class="inline-block w-full lg:max-w-full lg:flex">
+        <div class="flex items-center">
+          <div class="w-20 h-20 flex justify-center fa-align-center rounded-full mr-4 avatar bg-gray-300" style="font-size: 3rem; align-items: flex-end;">{{ $1 }}</div> 
+        </div>
+    </div>
+    <style>
+      data {
+        display: flex;
+      }
+     </style>
+    </section>
+</template>
