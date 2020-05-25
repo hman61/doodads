@@ -1,4 +1,4 @@
-import Doo from "/dist/js/doo.ui.js"
+//import Doo from "/dist/js/doo.ui.js"
 Doo.define(	class Ui extends Doo {
 		
 	constructor() {

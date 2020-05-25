@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preload" href="/assets/css/styles.css" as="style" >
 		<link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
 		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
 		<title>Doo UI</title>
@@ -11,7 +12,8 @@
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<script src="/dist/js/Mock.js"></script>
 
-		<script type="module" src="/dist/doo.ui.min.js"></script>
+		<script src="/dist/doo.ui.min.js"></script>
+		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
 		<script type="module" src="/dist/doo-ui.js"></script>
 
 		<!-- <doo-datastore> 
@@ -44,7 +46,7 @@
 
 		<div class="form-container">
 			<div class="h-form">
-				<a class="doo-logo" href="/app-examples">doo.ui</a>
+				<a class="doo-logo" href="/apps">doo.ui</a>
 				<div>
 					<label>Add a Menu Item</label>
 					<input id="test" value=""/>
@@ -83,7 +85,7 @@
 		</doo-ui>
 		
 		<h3>bar/pill.html</h3>
-		<doo-ui class="p-2 bg-gray-500" 
+		<doo-ui class="pl-2 pr-2 pb-2 bg-gray-500" 
 			data-name="pill"   
 			for-each="pill"
 			data-fetch="[Home,Products,Sample,About,Coolio]"
