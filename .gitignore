@@ -7,3 +7,5 @@ apps/contacts/.DS_Store
 apps/contacts2/.DS_Store
 dist/js/*.js
 apps/contacts4/.DS_Store
+.DS_Store
+.jshintrc
