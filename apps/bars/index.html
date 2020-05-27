@@ -13,7 +13,6 @@
 		<script src="/dist/js/Mock.js"></script>
 
 		<script src="/dist/doo.ui.min.js"></script>
-		<script type="module" src="/dist/doo-ui.element.js"></script>
 		<script>
 			//window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
 			window.contacts = new Mock('circle', 5)
@@ -24,7 +23,7 @@
 
 	<body>
 
-		<div class="form-container" style="position: sticky; top: 0">
+		<div class="form-container" style="width:100%;position: sticky; top:0">
 			<div class="h-form" style="align-items:flex-end">
 				<a class="doo-logo" href="/apps">doo.ui</a>
 				<div>
@@ -42,14 +41,6 @@
 				<div>
 					<label>&nbsp;</label>
 					<button onclick="Doo.DAO.append('pill', document.querySelector('#pill').value)">Add</button>
-				</div>	
-				<div>
-					<label>Add a Contact</label>
-					<input id="contact" value=""/>
-				</div>
-				<div>
-					<label>&nbsp;</label>
-					<button onclick="Doo.DAO.append('contacts', document.querySelector('#contact').value)">Add</button>
 				</div>	
 			</div>			
 		</div>
