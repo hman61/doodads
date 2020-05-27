@@ -24,8 +24,8 @@
 
 	<body>
 
-		<div class="form-container">
-			<div class="h-form">
+		<div class="form-container" style="position: sticky; top: 0">
+			<div class="h-form" style="align-items:flex-end">
 				<a class="doo-logo" href="/apps">doo.ui</a>
 				<div>
 					<label>Add a Menu Item</label>
@@ -35,8 +35,6 @@
 					<label>&nbsp;</label>
 					<button onclick="Doo.DAO.append('menu', document.querySelector('#test').value)">Add</button>
 				</div>	
-			</div>
-			<div class="h-form">
 				<div>
 					<label>Add a Pill</label>
 					<input id="pill" value=""/>
@@ -45,24 +43,16 @@
 					<label>&nbsp;</label>
 					<button onclick="Doo.DAO.append('pill', document.querySelector('#pill').value)">Add</button>
 				</div>	
+				<div>
+					<label>Add a Contact</label>
+					<input id="contact" value=""/>
+				</div>
+				<div>
+					<label>&nbsp;</label>
+					<button onclick="Doo.DAO.append('contacts', document.querySelector('#contact').value)">Add</button>
+				</div>	
 			</div>			
 		</div>
-		<h3>circle/circle.html</h3>
-		<doo-ui 
-			data-name="contacts"
-			for-each="contacts"
-			data-fetch="window.contacts" 
-			template="/doodads/circle/circle.html"
-			data-map="avatar">
-		</doo-ui>
-		<h3>bar/bar.html (Mock Contacts)</h3>
-		<doo-ui 
-			data-name="contacts"
-			for-each="contacts"
-			data-fetch="window.contacts"
-			template="/doodads/bar/bar.html" 
-			data-map="fname">
-		</doo-ui>
 		<h3>bar/bar.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-400" 
@@ -147,6 +137,22 @@
 			data-map="0"
 			template="/doodads/bar/bar-end.html"
 		>
+		</doo-ui>
+		<h3>circle/circle.html</h3>
+		<doo-ui 
+			data-name="contacts"
+			for-each="contacts"
+			data-fetch="window.contacts" 
+			template="/doodads/circle/circle.html"
+			data-map="avatar">
+		</doo-ui>
+		<h3>bar/bar.html (Mock Contacts)</h3>
+		<doo-ui 
+			data-name="contacts"
+			for-each="contacts"
+			data-fetch="window.contacts"
+			template="/doodads/bar/bar.html" 
+			data-map="fname">
 		</doo-ui>
 			
 	
