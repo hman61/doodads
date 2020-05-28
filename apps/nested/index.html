@@ -11,21 +11,15 @@
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<script src="/dist/js/Mock.js"></script>
 
-		<!-- <script type="module" src="/dist/doo.ui.min.js"></script> -->
-		<script type="module" src="/dist/js/doo.ui.js"></script>
-
-		<doo-datastore> 
-			<!-- Global Data store and data access object refered in templates as Doo.DAO -->
-			<!-- You can add multiple data nodes in this section -->
-			<data for-each="xyz" data-fetch="/apps/olympics/data/athletes.json" />
-		</doo-datastore>
+		<script type="module" src="/dist/doo.ui.min.js"></script>
+		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
 
 	</head>
 
 	<body>
-		<h3>Contacts-3 - Example</h3>
+		<h3>Nested - Example</h3>
 		<div class="find">Find:
-			<input type="text" onkeyup="Contacts3[0].find(this)" class="input is-medium" placeholder="Search ..." />
+			<input type="text" onkeyup="Nested[0].find(this)" class="input is-medium" placeholder="Search ..." />
 		</div>
 		<div class="form-container">
 			<div class="h-form">
@@ -47,14 +41,14 @@
 				</div>	
 				<div>
 					<label>&nbsp;</label>
-					<button onclick="Contacts3[0].add(this.parentElement.parentElement)">Add</button>
+					<button onclick="Nested[0].add(this.parentElement.parentElement)">Add</button>
 				</div>	
 			</div>
 		</div>
 		
-		<script type="module" defer src="js/Contacts3.js"></script>
+		<script type="module" defer src="js/Nested.js"></script>
 		<script type="module" defer src="/components/card/card.js"></script>
-		<doo-contacts3 template="./templates/contacts3.html"></doo-contacts3>
+		<doo-nested template="./templates/nested-1.html"></doo-nested>
 	</body>
 </html>
 

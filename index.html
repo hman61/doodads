@@ -7,7 +7,6 @@
     <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@0.9.11/dist/doo.ui.min.js"></script> -->
     <!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
     <script type="module" src="/dist/doo.ui.min.js"></script>
-		<script type="module" src="/dist/doo-ui.element.js"></script>
 
     <link href="/assets/css/styles.css" rel="stylesheet" />
 
@@ -28,11 +27,10 @@
     </script>
 <script>
   window.coolio = [{
-                    fname:'Doo',
-                    lname: '.ui',
+                    fname:'Doo.ui',
                     city: 'Lake Oswego',
-                    phone: '310 555-1212'
-
+                    phone: '310 555-1212',
+                    caption: 'Fast, Clean & Powerful'
                   }]
 </script>
 
@@ -67,8 +65,12 @@
       <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/doo-computed/index.html">Computed Functions Sample</a></h3>
       <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/todomvc/dooui/index.html">ToDoo MVC</a></h3>
 
-      <doo-ui data-name="contacts" data-fetch="window.coolio" template="/doodads/card/card.html" 
-            data-map="fname,lname,city,phone,bob"></doo-ui>
+      <doo-ui 
+        for-each="contacts"
+        data-fetch="window.coolio"
+        template="/doodads/card/card.html" 
+        data-map="fname,city,phone,date,caption,lorem()">
+      </doo-ui>
 
 
  

@@ -23,8 +23,8 @@
 
 	<body>
 
-		<div class="form-container" style="width:100%;position: sticky; top:0">
-			<div class="h-form" style="align-items:flex-end">
+		<div class="form-container" style="width:100%;position: sticky; top:0;">
+			<div class="h-form" style="align-items:flex-end;width:100%">
 				<a class="doo-logo" href="/apps">doo.ui</a>
 				<div>
 					<label>Add a Menu Item</label>
@@ -47,7 +47,6 @@
 		<h3>bar/bar.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-400" 
-			data-name="menu"   
 			for-each="menu"
 			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
@@ -60,7 +59,6 @@
 		
 		<h3>bar/pill.html</h3>
 		<doo-ui class="pl-2 pr-2 pb-2 bg-gray-500" 
-			data-name="pill"   
 			for-each="pill"
 			data-fetch="[Home,Products,Sample,About,Coolio]"
 			data-map="0"
@@ -72,7 +70,6 @@
 		<h3>bar/bar-evenly.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-600" 
-			data-name="menu"   
 			for-each="menu"
 			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
@@ -82,7 +79,6 @@
 		<h3>bar/bar-1::n.html</h3>
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
-			data-name="menu"
 			for-each="menu"   
 			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
@@ -92,7 +88,6 @@
 		<h3>bar/bar-n::1.html</h3>
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
-			data-name="menu"
 			for-each="menu"   
 			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
@@ -102,7 +97,6 @@
 		<h3>bar/bar-start.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			data-name="menu5"
 			for-each="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
@@ -112,7 +106,6 @@
 		<h3>bar/bar-center.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			data-name="menu5"
 			for-each="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
@@ -123,7 +116,6 @@
 		<h3>bar/bar-end.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			data-name="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
 			template="/doodads/bar/bar-end.html"
@@ -131,7 +123,6 @@
 		</doo-ui>
 		<h3>circle/circle.html</h3>
 		<doo-ui 
-			data-name="contacts"
 			for-each="contacts"
 			data-fetch="window.contacts" 
 			template="/doodads/circle/circle.html"
@@ -139,7 +130,6 @@
 		</doo-ui>
 		<h3>bar/bar.html (Mock Contacts)</h3>
 		<doo-ui 
-			data-name="contacts"
 			for-each="contacts"
 			data-fetch="window.contacts"
 			template="/doodads/bar/bar.html" 
