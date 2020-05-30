@@ -13,10 +13,14 @@
 		<script src="/dist/js/Mock.js"></script>
 
 		<script src="/dist/doo.ui.min.js"></script>
+		<!-- <script type="module" src="/dist/doo.ui.js"></script> -->
 		<script>
-			//window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
+			window.menu1 = [{nav:'Home1'},{nav:'Products'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
 			window.contacts = new Mock('circle', 5)
 		</script>
+		<doo-datastore>
+			<data  for-each="menu1" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data>
+		</doo-datastore>
 
 	</head>
 
@@ -47,12 +51,12 @@
 		<h3>bar/bar.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-400" 
-			for-each="menu"
-			data-fetch="[Home,Products,Sample,About]"
-			data-map="0"
+			for-each="menu1"
+			data-fetch="window.menu1"
+			data-map="nav"
 			template="/doodads/bar/bar.html"
 			rounded="rounded"
-			bg="bg-purple-500"
+			bg="bg-pink-500"
 			text="text-white"
 		>
 		</doo-ui>
@@ -70,9 +74,9 @@
 		<h3>bar/bar-evenly.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-600" 
-			for-each="menu"
-			data-fetch="[Home,Products,Sample,About]"
-			data-map="0"
+			for-each="menu1"
+			data-fetch="window.menu1"
+			data-map="nav"
 			template="/doodads/bar/bar-evenly.html"
 		>
 		</doo-ui>
@@ -116,6 +120,7 @@
 		<h3>bar/bar-end.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
+			for-each="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
 			template="/doodads/bar/bar-end.html"
@@ -126,7 +131,7 @@
 			for-each="contacts"
 			data-fetch="window.contacts" 
 			template="/doodads/circle/circle.html"
-			data-map="avatar">
+			data-map="fname.substring(0,1)">
 		</doo-ui>
 		<h3>bar/bar.html (Mock Contacts)</h3>
 		<doo-ui 
