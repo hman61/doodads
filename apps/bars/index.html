@@ -13,19 +13,22 @@
 		<script src="/dist/js/Mock.js"></script>
 
 		<script src="/dist/doo.ui.min.js"></script>
-		<script type="module" src="/dist/doo-ui.element.js"></script>
+		<!-- <script type="module" src="/dist/doo.ui.js"></script> -->
 		<script>
-			//window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
+			window.menu1 = [{nav:'Home1'},{nav:'Products'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
 			window.contacts = new Mock('circle', 5)
 		</script>
+		<doo-datastore>
+			<data  for-each="menu1" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data>
+		</doo-datastore>
 
 	</head>
 
 
 	<body>
 
-		<div class="form-container">
-			<div class="h-form">
+		<div class="form-container" style="width:100%;position: sticky; top:0;">
+			<div class="h-form" style="align-items:flex-end;width:100%">
 				<a class="doo-logo" href="/apps">doo.ui</a>
 				<div>
 					<label>Add a Menu Item</label>
@@ -35,8 +38,6 @@
 					<label>&nbsp;</label>
 					<button onclick="Doo.DAO.append('menu', document.querySelector('#test').value)">Add</button>
 				</div>	
-			</div>
-			<div class="h-form">
 				<div>
 					<label>Add a Pill</label>
 					<input id="pill" value=""/>
@@ -47,39 +48,21 @@
 				</div>	
 			</div>			
 		</div>
-		<h3>circle/circle.html</h3>
-		<doo-ui 
-			data-name="contacts"
-			for-each="contacts"
-			data-fetch="window.contacts" 
-			template="/doodads/circle/circle.html"
-			data-map="avatar">
-		</doo-ui>
-		<h3>bar/bar.html (Mock Contacts)</h3>
-		<doo-ui 
-			data-name="contacts"
-			for-each="contacts"
-			data-fetch="window.contacts"
-			template="/doodads/bar/bar.html" 
-			data-map="fname">
-		</doo-ui>
 		<h3>bar/bar.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-400" 
-			data-name="menu"   
-			for-each="menu"
-			data-fetch="[Home,Products,Sample,About]"
-			data-map="0"
+			for-each="menu1"
+			data-fetch="window.menu1"
+			data-map="nav"
 			template="/doodads/bar/bar.html"
 			rounded="rounded"
-			bg="bg-purple-500"
+			bg="bg-pink-500"
 			text="text-white"
 		>
 		</doo-ui>
 		
 		<h3>bar/pill.html</h3>
 		<doo-ui class="pl-2 pr-2 pb-2 bg-gray-500" 
-			data-name="pill"   
 			for-each="pill"
 			data-fetch="[Home,Products,Sample,About,Coolio]"
 			data-map="0"
@@ -91,17 +74,15 @@
 		<h3>bar/bar-evenly.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-600" 
-			data-name="menu"   
-			for-each="menu"
-			data-fetch="[Home,Products,Sample,About]"
-			data-map="0"
+			for-each="menu1"
+			data-fetch="window.menu1"
+			data-map="nav"
 			template="/doodads/bar/bar-evenly.html"
 		>
 		</doo-ui>
 		<h3>bar/bar-1::n.html</h3>
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
-			data-name="menu"
 			for-each="menu"   
 			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
@@ -111,7 +92,6 @@
 		<h3>bar/bar-n::1.html</h3>
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
-			data-name="menu"
 			for-each="menu"   
 			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
@@ -121,7 +101,6 @@
 		<h3>bar/bar-start.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			data-name="menu5"
 			for-each="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
@@ -131,7 +110,6 @@
 		<h3>bar/bar-center.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			data-name="menu5"
 			for-each="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
@@ -142,11 +120,25 @@
 		<h3>bar/bar-end.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			data-name="menu5"   
+			for-each="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
 			template="/doodads/bar/bar-end.html"
 		>
+		</doo-ui>
+		<h3>circle/circle.html</h3>
+		<doo-ui 
+			for-each="contacts"
+			data-fetch="window.contacts" 
+			template="/doodads/circle/circle.html"
+			data-map="fname.substring(0,1)">
+		</doo-ui>
+		<h3>bar/bar.html (Mock Contacts)</h3>
+		<doo-ui 
+			for-each="contacts"
+			data-fetch="window.contacts"
+			template="/doodads/bar/bar.html" 
+			data-map="fname">
 		</doo-ui>
 			
 	
