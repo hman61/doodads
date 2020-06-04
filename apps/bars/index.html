@@ -12,14 +12,14 @@
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<script src="/dist/js/Mock.js"></script>
 
-		<script src="/dist/doo.ui.min.js"></script>
-		<!-- <script type="module" src="/dist/doo.ui.js"></script> -->
+		<!-- <script src="/dist/doo.ui.min.js"></script> -->
+		<script type="module" src="/dist/js/doo.ui.js"></script>
 		<script>
 			window.menu1 = [{nav:'Home1'},{nav:'Products'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
 			window.contacts = new Mock('circle', 5)
 		</script>
 		<doo-datastore>
-			<data  for-each="menu1" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data>
+			<data  name="menu2" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data>
 		</doo-datastore>
 
 	</head>

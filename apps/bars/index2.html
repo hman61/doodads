@@ -12,25 +12,48 @@
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<script src="/dist/js/Mock.js"></script>
 
-		<script  src="/dist/doo.ui.min.js"></script>
-		<!-- <script type="module" src="/dist/doo.ui.js"></script> -->
+		<!-- <script  src="/dist/doo.ui.min.js"></script> -->
+		<script type="module" src="/dist/js/doo.ui.js"></script>
 		<script>
 			//window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
             window.contacts = new Mock('circle', 2)
             
             
 		</script>
-		<script type="module">
-              class Coolio2 extends Doo {
-                    constructor() {
-                        super()
-                    }
+
+		<doo-datastore>
+			<data  name="menu2" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data>
+		</doo-datastore>
+
+
+		<script xtype="module">
+ /*
+ window['Coolio2'] = class Coolio2   {
                     hi() {
                         alert('hi')
                     }
               }  
 
 
+			const Coolio4  =  {
+					name: 'CoolioFour',
+					init:() => {
+						alert(this.name)
+					},
+
+                    hi: () => {
+                        alert('hi')
+					},
+					bye: () =>  {
+						alert('bye')
+					}
+              }  
+
+			//window.Coolio4 = Coolio4  	
+			Reflect.ownKeys(Coolio4).forEach(key=>{
+				console.log(key, Coolio4[key], typeof key )
+			})	
+*/
         </script>
 
 
@@ -39,14 +62,16 @@
 
 	<body>
 
-		<h3>circle/circle.html</h3>
+		<h3>circle/circle-test.html</h3>
 		<doo-ui 
+
 			for-each="contacts"
 			data-fetch="window.contacts" 
-			template="/doodads/circle/circle.html"
-            data-map="fname.substring(0,1)"
-            extends="Coolio2"
-            >
+			template="/doodads/circle/circle-test.html"
+            data-map="avatar"
+        	extends="/apps/bars/Coolio4.js"
+			action-map="hi()"
+			>
 
 		</doo-ui>
 		<h3>circle/circle2.html</h3>
