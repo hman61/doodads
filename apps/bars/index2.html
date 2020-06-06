@@ -5,6 +5,7 @@
 		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="preload" href="/assets/css/styles.css" as="style" >
+		<link rel="stylesheet" href="/assets/css/styles.css" >
 		<link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
 		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
 		<title>Doo UI</title>
@@ -39,13 +40,55 @@
 
 	<body>
 
+<!-- Full width column -->
+<div class="flex mb-4">
+	<div class="flex-1 bg-gray-500 h-12"></div>
+  </div>
+  
+  <!-- Five columns -->
+  <div class="flex mb-4">
+	<div class="flex-1 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-2 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
+  </div>
+  
+  <!-- Seven columns -->
+  <div class="flex mb-4">
+	<div class="flex-1 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
+  </div>
+  
+  <!-- Eleven columns -->
+  <div class="flex mb-4">
+	<div class="flex-1 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-500 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
+  </div>
+
+
 		<h3>circle/circle.html</h3>
 		<doo-ui 
 			for-each="contacts"
 			data-fetch="window.contacts" 
 			template="/doodads/circle/circle.html"
-            data-map="fname.substring(0,1)"
-            extends="Coolio2"
+			data-map="fname.substring(0,1)"
+			data-layout="1|2|*|2|1"   
+            xextends="Coolio2"
             >
 
 		</doo-ui>
@@ -88,7 +131,7 @@
 				background-repeat: no-repeat;
 				margin-right: 0.5rem;
 				color: black;
-				text-decoration: none;
+				text-overflow: ellipsis; 
 			}
 
 		</style>

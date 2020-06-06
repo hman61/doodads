@@ -20,7 +20,7 @@
 			window.contacts = new Mock('circle', 5)
 		</script>
 		<doo-datastore>
-			<data  for-each="menu1" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data>
+			<!-- <data  for-each="menu1" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data> -->
 		</doo-datastore>
 
 	</head>
@@ -28,9 +28,10 @@
 
 	<body>
 
-		<div class="form-container" style="width:100%;position: sticky; top:0;">
+		<div class="form-container" style="margin-bottom:1rem;width:100%;position: sticky; top:0; background-color: white;">
+			<a class="doo-logo" href="/apps">doo.ui</a>
+
 			<div class="h-form" style="align-items:flex-end;width:100%">
-				<a class="doo-logo" href="/apps">doo.ui</a>
 				<div>
 					<label>Add a Menu Item</label>
 					<input id="test" value=""/>
@@ -39,6 +40,7 @@
 					<label>&nbsp;</label>
 					<button onclick="Doo.DAO.append('menu', document.querySelector('#test').value)">Add</button>
 				</div>	
+
 				<div>
 					<label>Add a Pill</label>
 					<input id="pill" value=""/>
@@ -47,8 +49,9 @@
 					<label>&nbsp;</label>
 					<button onclick="Doo.DAO.append('pill', document.querySelector('#pill').value)">Add</button>
 				</div>	
-			</div>			
-		</div>
+
+			</div>
+		</div>	
 		<h3>bar/bar.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-400" 
@@ -139,13 +142,21 @@
 			for-each="contacts"
 			data-fetch="window.contacts" 
 			template="/doodads/circle/circle2.html"
-			data-map="fname.substring(0,1)|lname.substring(0,1)">
+			data-map="fname.substring(0,1)|lname.substring(0,1)"
+			>
+		</doo-ui>
+		
+		<doo-ui 
+			for-each="contacts"
+			data-fetch="window.contacts"
+			template="/doodads/bar/bar-2.html" 
+			data-map="fname|lname">
 		</doo-ui>
 		<doo-ui 
 			for-each="contacts"
 			data-fetch="window.contacts"
-			template="/doodads/bar/bars.html" 
-			data-map="fname">
+			template="/doodads/bar/bar-3.html" 
+			data-map="avatar|fname|lname">
 		</doo-ui>
 			
 	
