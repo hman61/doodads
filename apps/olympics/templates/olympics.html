@@ -3,7 +3,7 @@
 	<section>
 		<link rel="stylesheet" href="/assets/css/doo/doo-flex-grid.css">
 		<div class="container">
-            <div class="fhead" data-src="[0]" for-each="dummy" >
+            <div class="fhead" data-src="[0]" bind="dummy" >
                 <div class="small">
                     <span data-sort="false">Row#</span>
                 </div>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="fbody">
-                <div data-src="Doo.DAO" for-each="athletes">
+                <div data-src="Doo.DAO" bind="athletes">
 					<div class="small number">{{ row() }}</div>
 					<div>{{ sport }}</div>
 					<div>{{ athlete }}</div>

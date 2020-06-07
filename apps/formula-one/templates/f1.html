@@ -7,21 +7,21 @@
 			</div>		
 			<div class="find">Find:
 				<input type="text" onkeyup="F1[0].find(this)" class="input is-medium" placeholder="Search for driver" />
-				<!-- <div id="footer" class="total" for-each="recCount">
+				<!-- <div id="footer" class="total" bind="recCount">
 					<i>Found: {{found}} / <b>{{total}}</b></i>
 				</div>		 -->
 			</div>
 		</div>
 		<link rel="stylesheet" href="/assets/css/doo/doo-flex-grid.css">
 		<div class="container">
-			<div class="fhead" data-src="[0]" for-each="dummy" >
+			<div class="fhead" data-src="[0]" bind="dummy" >
 				<div><span onclick="self.sortBy(this, 'Driver.familyName')" class="doo-sort">Last Name</span></div>
 				<div><span onclick="self.sortBy(this, 'Driver.givenName')"  class="doo-sort">First Name</span></div>
 				<div class="small number"><span onclick="self.sortBy(this, 'points')" class="doo-sort">Points</span></div>
 				<div><span onclick="self.sortBy(this, 'Driver.nationality')" class="doo-sort">Nationality</span></div>
 			</div>	
 			<div class="fbody">
-				<div data-src="this.data" for-each="driverList">
+				<div data-src="this.data" bind="driverList">
 					<div>{{Driver.givenName}}</div>
 					<div>{{Driver.familyName}}</div>
 					<div class="small number">{{ points }}</div>

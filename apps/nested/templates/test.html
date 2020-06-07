@@ -2,10 +2,10 @@
 <template>
     <section>
         <header  ><b>Main Office:</b></header>
-        <dd data-src="this.parent.data" for-each="contacts">{{ location.city }}</dd>
+        <dd data-src="this.parent.data" bind="contacts">{{ location.city }}</dd>
  
         <div class="other">Other Locations:</div>
-        <dd data-src="this.data" for-each="test">{{ other() }}</dd>
+        <dd data-src="this.data" bind="test">{{ other() }}</dd>
     </section>
     <style>
         .other {

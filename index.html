@@ -5,9 +5,10 @@
     <title>Hello World</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@0.9.11/dist/doo.ui.min.js"></script> -->
-    <!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
     <script  src="/dist/doo.ui.min.js"></script>
+    <!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
 
+    <link href="/assets/css/styles.css" rel="preload" as="style" />
     <link href="/assets/css/styles.css" rel="stylesheet" />
 
     <script defer type="module">
@@ -15,10 +16,9 @@
         class Hello extends Doo {
           constructor() {
             super();
-            this.template = this.getAttribute("template");
             this.data = {
               greeting: { say: "World" },
-              greeting2: [{ say: "USA" }, { say: "Finland" }],
+              country: [{ say: "USA" }, { say: "Finland" }],
             };
           }
         }
@@ -26,8 +26,10 @@
  
     </script>
 <script>
-  window.coolio = [{
-                    fname:'Doo.ui',
+  window.info = [{
+                    company:'Doo.ui',
+                    fname:'Doolio',
+                    lname:'One',
                     city: 'Lake Oswego',
                     phone: '310 555-1212',
                     caption: 'Fast, Clean & Powerful'
@@ -45,14 +47,12 @@
 
     <template id="t1">
       <section>
-        <h3 data-src="this.data" for-each="greeting" style="color: red;">
-          Hello {{say}}
-        </h3>
+        <h3 data-src="this.data" bind="greeting" style="color: red;">Hello {{say}}</h3>
       </section>
     </template>
     <template id="t2">
       <section>
-        <h1 data-src="this.data" for-each="greeting2">Hello {{say}}!</h1>
+        <h1 data-src="this.data" bind="country">Hello {{say}}!</h1>
       </section>
     </template>
     <center>
@@ -62,14 +62,14 @@
 
       <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/contacts/index.html">Contacts</a></h3>
       <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/olympics/index.html">Olympics</a></h3>
-      <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/doo-computed/index.html">Computed Functions Sample</a></h3>
       <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/todomvc/dooui/index.html">ToDoo MVC</a></h3>
+      <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/doo-computed/index.html">Computed Functions Sample</a></h3>
 
       <doo-ui 
-        for-each="contacts"
-        data-fetch="window.coolio"
+        bind="contacts"
+        data-fetch="window.info"
         template="/doodads/card/card.html" 
-        data-map="fname|city|phone|date|caption|lorem()">
+        data-map="company|fname|lname|city|phone|caption">
       </doo-ui>
 
 

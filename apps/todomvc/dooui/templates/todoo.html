@@ -13,7 +13,7 @@
 				<input onchange="ToDoo[0].allDone(this)" id="toggle-all" class="toggle-all" type="checkbox">
 				<label for="toggle-all">Mark all as complete.</label>
 				<ul class="todo-list container">
-					<li for-each="todos" data-src="this.data" class="todo {{ getCompleted() }}">
+					<li bind="todos" data-src="this.data" class="todo {{ getCompleted() }}">
 						<div class="view">
 							<input class="toggle" checked="{{completed}}" type="checkbox" onclick="ToDoo[0].toggleCheck('{{ i() }}')" value="{{completed}}" />
 							<label ondblclick="ToDoo[0].editTodo(this)">{{ title }}</label>
@@ -24,13 +24,13 @@
 				</ul>
 			</section>
 			<footer class="footer hide">
-				<span for-each="recCount" data-src="this.data" class="todo-count">
+				<span bind="recCount" data-src="this.data" class="todo-count">
 					<strong>{{ getRecCount() }} item{{ getS() }}</strong>
 				</span>
 				<ul class="filters">
-					<li for-each="todoFilters" data-src="this.data"><a  href="#{{ text }}" onclick="ToDoo[0].renderFilter('{{ i() }}')" class="{{selected}}">{{text}}</a></li>
+					<li bind="todoFilters" data-src="this.data"><a  href="#{{ text }}" onclick="ToDoo[0].renderFilter('{{ i() }}')" class="{{selected}}">{{text}}</a></li>
 				</ul>
-				<button for-each="recCount" data-src="this.data" class="clear-completed {{ hide() }}" onclick="ToDoo[0].removeCompleted()">
+				<button bind="recCount" data-src="this.data" class="clear-completed {{ hide() }}" onclick="ToDoo[0].removeCompleted()">
 					Clear completed
 				</button>
 			</footer>
