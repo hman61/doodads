@@ -5,7 +5,7 @@
     <link href="/assets/css/styles.css" rel="stylesheet" />
     <data default rounded="rounded" bg="bg-gray-500" text="text-white" border="border-gray-500"></data>
     <ul  class="flex flex-wrap justify-between">
-      <li data-src="Doo.DAO" for-each="${for-each}">
+      <li data-src="Doo.DAO" bind="${bind}">
         <a tabindex="{{ n() }}" class="inline-block  border ${border} ${rounded} py-1 px-3 ${bg} ${text}" href="#"><span class="mr-2">${1}</span><span class="mr-1">${2}</span>${3}</a>
       </li>
     </ul>

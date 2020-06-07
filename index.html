@@ -45,14 +45,14 @@
 
     <template id="t1">
       <section>
-        <h3 data-src="this.data" for-each="greeting" style="color: red;">
+        <h3 data-src="this.data" bind="greeting" style="color: red;">
           Hello {{say}}
         </h3>
       </section>
     </template>
     <template id="t2">
       <section>
-        <h1 data-src="this.data" for-each="greeting2">Hello {{say}}!</h1>
+        <h1 data-src="this.data" bind="greeting2">Hello {{say}}!</h1>
       </section>
     </template>
     <center>
@@ -66,7 +66,7 @@
       <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/todomvc/dooui/index.html">ToDoo MVC</a></h3>
 
       <doo-ui 
-        for-each="contacts"
+        bind="contacts"
         data-fetch="window.coolio"
         template="/doodads/card/card.html" 
         data-map="fname|city|phone|date|caption|lorem()">

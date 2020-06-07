@@ -20,7 +20,7 @@
 			window.contacts = new Mock('circle', 5)
 		</script>
 		<doo-datastore>
-			<!-- <data  for-each="menu1" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data> -->
+			<!-- <data  bind="menu1" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data> -->
 		</doo-datastore>
 
 	</head>
@@ -55,7 +55,7 @@
 		<h3>bar/bar.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-400" 
-			for-each="menu"
+			bind="menu"
 			data-fetch="window.menu1"
 			data-map="0"
 			template="/doodads/bar/bar.html"
@@ -67,7 +67,7 @@
 		
 		<h3>bar/pill.html</h3>
 		<doo-ui class="pl-2 pr-2 pb-2 bg-gray-500" 
-			for-each="pill"
+			bind="pill"
 			data-fetch="[Home,Products,Sample,About,Coolio]"
 			data-map="0"
 			template="/doodads/pill/pill.html"
@@ -78,7 +78,7 @@
 		<h3>bar/bar-evenly.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-600" 
-			for-each="menu2"
+			bind="menu2"
 			data-fetch="window.menu2"
 			data-map="nav"
 			template="/doodads/bar/bar-evenly.html"
@@ -87,7 +87,7 @@
 		<h3>bar/bar-1::n.html</h3>
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
-			for-each="menu"   
+			bind="menu"   
 			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
 			template="/doodads/bar/bar-1::n.html"
@@ -96,7 +96,7 @@
 		<h3>bar/bar-n::1.html</h3>
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
-			for-each="menu"   
+			bind="menu"   
 			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
 			template="/doodads/bar/bar-n::1.html"
@@ -105,7 +105,7 @@
 		<h3>bar/bar-start.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			for-each="menu5"   
+			bind="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
 			template="/doodads/bar/bar-start.html"
@@ -114,7 +114,7 @@
 		<h3>bar/bar-center.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			for-each="menu5"   
+			bind="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
 			template="/doodads/bar/bar-center.html"
@@ -124,7 +124,7 @@
 		<h3>bar/bar-end.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			for-each="menu5"   
+			bind="menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
 			template="/doodads/bar/bar-end.html"
@@ -132,14 +132,14 @@
 		</doo-ui>
 		<h3>circle/circle.html</h3>
 		<doo-ui 
-			for-each="contacts"
+			bind="contacts"
 			data-fetch="window.contacts" 
 			template="/doodads/circle/circle.html"
 			data-map="avatar">
 		</doo-ui>
 		<h3>circle/circle2.html</h3>
 		<doo-ui 
-			for-each="contacts"
+			bind="contacts"
 			data-fetch="window.contacts" 
 			template="/doodads/circle/circle2.html"
 			data-map="fname.substring(0,1)|lname.substring(0,1)"
@@ -147,13 +147,13 @@
 		</doo-ui>
 		
 		<doo-ui 
-			for-each="contacts"
+			bind="contacts"
 			data-fetch="window.contacts"
 			template="/doodads/bar/bar-2.html" 
 			data-map="fname|lname">
 		</doo-ui>
 		<doo-ui 
-			for-each="contacts"
+			bind="contacts"
 			data-fetch="window.contacts"
 			template="/doodads/bar/bar-3.html" 
 			data-map="avatar|fname|lname">

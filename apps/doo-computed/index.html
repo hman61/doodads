@@ -5,7 +5,7 @@
 
 <template id="t1">
     <section>
-        <ul data-src="this.data" for-each="sample" >
+        <ul data-src="this.data" bind="sample" >
             <li> {{ i() }} |  {{ n() }} | {{ letter.toUpperCase() }} | {{ first.substring(0,3) }} | {{  getName() }}</li>
         </ul>
     </section>  
