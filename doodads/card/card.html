@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <template>
-  <section class="bg-gray-100" >
+  <section>
     <link href="/assets/css/styles.css" rel="preload" as="style" />
     <link href="/assets/css/styles.css" rel="stylesheet" />
-    <div data-src="Doo.DAO" bind="contacts" class="max-w-sm w-full lg:max-w-full lg:flex">
+    <div data-src="Doo.DAO" bind="${bind}" class="max-w-sm w-full lg:max-w-full lg:flex">
     <div
       class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
       style="font-size: 8rem; background-color: darkgrey"
@@ -15,15 +15,24 @@
           <p class="text-sm text-gray-600 flex items-center">
             &#128274; Members only 
           </p>
-          <div class="doo-apply text-gray-900 font-bold text-xl mb-2">${5}</div>
-          <p class="flex-start text-gray-700 text-base">${6}
+          <div class="doo-apply text-gray-900 font-bold text-xl mb-2">${6}</div>
+          <p class="flex-start text-gray-700 text-base">
+            <ul>
+              <li>Small source code (under 25K)</li>
+              <li>Blazingly fast rendering</li>
+              <li>Outperforms leading frameworks</li>
+              <li>Simple, easy to learn</li>
+            </ul>
           </p>
         </div>
         <div class="flex items-center">
-          <div class="w-20 h-20 flex justify-center fa-align-center rounded-full mr-4 avatar bg-gray-300" style="font-size: 3rem; align-items: flex-end;">&#129408</div> 
+          <div class="w-20 h-20 flex justify-center fa-align-center rounded-full mr-4 avatar bg-gray-300" style="font-size: 3rem; align-items: flex-end;">
+            <img src="/favicon.png" />
+          </div> 
           <div class="text-sm">
-            <p class="text-gray-900 leading-none">${1} ${2}</p>
-            <p class="text-gray-600">${3}</p>
+            <p class="text-gray-900">${2} ${3}</p>
+            <p class="text-gray-600">${4}</p>
+            <p class="text-gray-600">${5}</p>
           </div>
         </div>
       </div>
