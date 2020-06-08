@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<template>
+	<section>
+		<link rel="preload" href="/assets/css/doo/doo-flex-grid.css" as="style">
+		<link rel="stylesheet" href="/assets/css/doo/doo-flex-grid.css">
+		<div class="container">
+           <div class="fbody">
+                <data>
+                    <div class="fhead"  data-src="[0]" bind="dummy">
+                        <div onclick="self.sortBy(this, 'sport')"  class="md doo-sort">Sport</div>
+                        <div onclick="self.sortBy(this, 'athlete')"  class="lg doo-sort">Athlete</div>
+                        <div onclick="self.sortBy(this, 'year')"  class="small doo-sort">Year</div>
+                        <div onclick="self.sortBy(this, 'gold')"  class="small doo-sort">Gold</div>
+                        <div onclick="self.sortBy(this, 'silver')"  class="small doo-sort">Silver</div>
+                        <div onclick="self.sortBy(this, 'bronze')"  class="small doo-sort">Bronze</div>
+                        <div onclick="self.sortBy(this, 'country')"  class="md doo-sort">Country</div>
+                    </div>
+
+                </data>
+                <data>
+                <!-- <div  class="fhead2">
+                    <div data-src="${data-label-map}" bind="dummy" onclick="self.sortBy(this, '{{ 0 }}')"  class="doo-sort" style="display: inline-block;">{{ 0 }}</div>
+                </div> -->
+                    
+                </data>
+
+                <div data-src="Doo.DAO" bind="${bind}">
+					<div class="md">${1}</div>
+					<div class="lg">${2}</div>
+                    <div class="small">${3}</div>
+					<div class="small number">${4}</div>
+					<div class="small number">${5}</div>
+					<div class="small number">${6}</div>
+                    <div class="md">${7}</div>
+                </div> 
+			</div>
+        </div>
+        <style>
+            .small {
+                flex: 1 !important;
+                width: 2.5rem;
+                min-width: 5vw !important;
+                max-width: 8vw !important;
+                text-overflow: ellipsis;
+                overflow-x: hidden; 
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 0.5rem 0.25rem 0.25rem !important;
+            }
+            .md {
+                flex:2 !important;
+                min-width: 10vw !important;
+                max-width: 16vw !important;
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 0.5rem 0.25rem 0.25rem !important;
+
+            }
+            .lg {
+                flex:4 !important;
+                min-width: 20vw !important;
+                max-width: 32vw !important;
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 0.5rem 0.25rem 0.25rem !important;
+                 
+            }
+
+</style>
+ 	</section>
+</template>

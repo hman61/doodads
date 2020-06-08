@@ -14,27 +14,13 @@
 		<script src="/dist/js/Mock.js"></script>
 
 		<script  src="/dist/doo.ui.min.js"></script>
-		<!-- <script type="module" src="/dist/doo.ui.js"></script> -->
+		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
 		<script>
 			//window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
-            window.contacts = new Mock('circle', 2)
+            window.contacts = new Mock('circle', 3)
             
             
 		</script>
-		<script type="module">
-              class Coolio2 extends Doo {
-                    constructor() {
-                        super()
-                    }
-                    hi() {
-                        alert('hi')
-                    }
-              }  
-
-
-        </script>
-
-
 	</head>
 
 
@@ -49,7 +35,7 @@
   <div class="flex mb-4">
 	<div class="flex-1 bg-gray-400 h-12"></div>
 	<div class="flex-1 bg-gray-500 h-12"></div>
-	<div class="flex-2 bg-gray-400 h-12"></div>
+	<div class="flex-1 bg-gray-400 h-12"></div>
 	<div class="flex-1 bg-gray-500 h-12"></div>
 	<div class="flex-1 bg-gray-400 h-12"></div>
   </div>
@@ -79,16 +65,33 @@
 	<div class="flex-1 bg-gray-500 h-12"></div>
 	<div class="flex-1 bg-gray-400 h-12"></div>
   </div>
+  
+		<doo-ui 
+			bind="athlets" 
+			data-fetch="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json" 
+			template="/doodads/grid/grid-7.html"
+			data-map="athlete|sport|year|gold|silver|bronze|country"
+			data-label-map="reflectKeys('gold=Gold Count')"
+			>
+		</doo-ui>
+		
+		<doo-ui 
+			bind="athlets" 
+			data-fetch="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json" 
+			template="/doodads/table/table-3.html"
+			data-map="athlete|sport|gold"
+			data-label-map="[Athlete,Sport,Gold Count]"
+		>
+		</doo-ui>
 
 
+ 
 		<h3>circle/circle.html</h3>
 		<doo-ui 
 			bind="contacts"
 			data-fetch="window.contacts" 
 			template="/doodads/circle/circle.html"
 			data-map="fname.substring(0,1)"
-			data-layout="1|2|*|2|1"   
-            xextends="Coolio2"
             >
 
 		</doo-ui>
@@ -97,15 +100,15 @@
 			bind="contacts"
 			data-fetch="window.contacts" 
 			template="/doodads/circle/circle2.html"
-			data-map="fname.substring(0,1)|lname.substring(0,1)">
+			data-map="fname.substring(0,1)|content('🇦🇽')">
 
 		</doo-ui>
 		<h3>circle/circle2.html</h3>
 		<doo-ui 
 			bind="contacts"
 			data-fetch="window.contacts" 
-			template="/doodads/circle/circle2.html"
-			data-map="avatar|car">
+			template="/doodads/circle/circle.html"
+			data-map="avatar">
 
 		</doo-ui>
 

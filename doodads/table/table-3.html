@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<template rounded="rounded" bg="bg-gray-500" text="text-white" border="border-gray-500">
+  <section>
+    <link href="/assets/css/styles.css" rel="preload" as="style" />
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+    <div style="width:80%">
+    <table width="100%">  
+      <tr>
+        <th  data-src="${data-label-map}" bind="dummy" class="border ${border} ${rounded} py-1 px-3 ${bg} ${text}">{{ 0 }}</th>
+      </tr>
+    </table>  
+    <table width="100%">  
+        <tr data-src="Doo.DAO" bind="${bind}">
+          <td class="border ${border} ${rounded} py-1 px-3 ${bg} ${text}">${1}</td>
+          <td class="border ${border} ${rounded} py-1 px-3 ${bg} ${text}">${2}</td>
+          <td class="border ${border} ${rounded} py-1 px-3 ${bg} ${text}">${3}</td>
+        </tr>
+    </table>
+    </div>
+    <style>
+
+      @media (max-width: 479px) {
+        .flex {
+          justify-content: space-evenly;
+        }
+        li {
+          margin-bottom: 0.5rem;
+        }
+        li:last-child {
+          margin-bottom: 0;
+        }
+      }  
+    </style>
+  </section>
+</template>
