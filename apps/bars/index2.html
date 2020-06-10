@@ -13,8 +13,8 @@
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<script src="/dist/js/Mock.js"></script>
 
-		<script  src="/dist/doo.ui.min.js"></script>
-		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
+		<!-- <script  src="/dist/doo.ui.min.js"></script> -->
+		<script type="module" src="/dist/js/doo.ui.js"></script>
 		<script>
 			//window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
             window.contacts = new Mock('circle', 3)
@@ -25,7 +25,62 @@
 
 
 	<body>
+		<a class="doo-logo" href="/apps">doo.ui</a>
 
+  
+		<doo-ui
+			class="" 
+			bind="athletes" 
+			xdata-fetch="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json" 
+			data-fetch="http://localhost:8001/apps/olympics/data/athletes.json" 
+			template="/doodads/grid/grid-7.html"
+			data-map="Doo.reflect"
+			flex="3|1|2|1|2|2|1"
+
+			>
+		</doo-ui>
+		
+
+		
+		<doo-ui 
+			bind="athletes" 
+			data-fetch="http://localhost:8001/apps/olympics/data/athletes.json" 
+			template="/doodads/table/table-3.html"
+			data-map="athlete|sport|gold"
+			data-label-map="[Athlete,Sport,Gold Count]"
+			xxxflex="3|3|1|"
+
+			>
+		</doo-ui>
+
+
+ <!--
+		<h3>circle/circle.html</h3>
+		<doo-ui 
+			bind="contacts"
+			data-fetch="window.contacts" 
+			template="/doodads/circle/circle.html"
+			data-map="fname.substring(0,1)"
+            >
+
+		</doo-ui>
+		<h3>circle/circle2.html</h3>
+		<doo-ui 
+			bind="contacts"
+			data-fetch="window.contacts" 
+			template="/doodads/circle/circle2.html"
+			data-map="fname.substring(0,1)|content('🇦🇽')">
+
+		</doo-ui>
+		<h3>circle/circle2.html</h3>
+		<doo-ui 
+			bind="contacts"
+			data-fetch="window.contacts" 
+			template="/doodads/circle/circle.html"
+			data-map="avatar">
+
+		</doo-ui>
+	-->
 <!-- Full width column -->
 <div class="flex mb-4">
 	<div class="flex-1 bg-gray-500 h-12"></div>
@@ -65,53 +120,6 @@
 	<div class="flex-1 bg-gray-500 h-12"></div>
 	<div class="flex-1 bg-gray-400 h-12"></div>
   </div>
-  
-		<doo-ui 
-			bind="athlets" 
-			data-fetch="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json" 
-			template="/doodads/grid/grid-7.html"
-			data-map="athlete|sport|year|gold|silver|bronze|country"
-			data-label-map="reflectKeys('gold=Gold Count')"
-			>
-		</doo-ui>
-		
-		<doo-ui 
-			bind="athlets" 
-			data-fetch="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json" 
-			template="/doodads/table/table-3.html"
-			data-map="athlete|sport|gold"
-			data-label-map="[Athlete,Sport,Gold Count]"
-		>
-		</doo-ui>
-
-
- 
-		<h3>circle/circle.html</h3>
-		<doo-ui 
-			bind="contacts"
-			data-fetch="window.contacts" 
-			template="/doodads/circle/circle.html"
-			data-map="fname.substring(0,1)"
-            >
-
-		</doo-ui>
-		<h3>circle/circle2.html</h3>
-		<doo-ui 
-			bind="contacts"
-			data-fetch="window.contacts" 
-			template="/doodads/circle/circle2.html"
-			data-map="fname.substring(0,1)|content('🇦🇽')">
-
-		</doo-ui>
-		<h3>circle/circle2.html</h3>
-		<doo-ui 
-			bind="contacts"
-			data-fetch="window.contacts" 
-			template="/doodads/circle/circle.html"
-			data-map="avatar">
-
-		</doo-ui>
-
         
 	
 
@@ -126,14 +134,14 @@
 				padding-left: 0.5rem; 
 				padding-right: 1.5rem;  
 				font-size: 5rem; 
-				background-color: gray;
+				background-color:black;
 				display: inline-block;
 				background-image: url(/favicon.png);
-				background-position: 4rem 2.5rem;
+				background-position: 1.1rem 3.3rem;
 				background-size: 10%;
 				background-repeat: no-repeat;
 				margin-right: 0.5rem;
-				color: black;
+				color:lightgrey;
 				text-overflow: ellipsis; 
 			}
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <template>
-<section class="${class}">
+	<section>
 		<link rel="preload" href="/assets/css/doo/doo-flex-grid.css" as="style">
 		<link rel="stylesheet" href="/assets/css/doo/doo-flex-grid.css">
 		<div class="container">
@@ -9,13 +9,15 @@
                     <div data-src="[${flex}]" bind="void" onclick="self.sortBy(this, `{{ reflect('${bind}') }}`)"  class="doo-sort {{ dooFlex('${flex}') }}">{{ reflect('${bind}') }}</div>
                 </div>
                 <div data-src="Doo.DAO" bind="${bind}">
-                    <div class="doo-flex doo-3">${1}</div>
+                    <div data-src="[${flex}]" bind="void"   class="doo-sort">{{ reflectDynamic('${bind}') }}</div>
+  
+                    <!-- <div class="doo-flex doo-3">${1}</div>
 					<div class="doo-flex doo-1">${2}</div>
                     <div class="doo-flex doo-2">${3}</div>
 					<div class="doo-flex doo-1">${4}</div>
 					<div class="doo-flex doo-2">${5}</div>
 					<div class="doo-flex doo-2">${6}</div>
-                    <div class="doo-flex doo-1">${7}</div>
+                    <div class="doo-flex doo-1">${7}</div> -->
                 </div> 
 			</div>
         </div>
@@ -46,8 +48,8 @@
                 max-width: 16vw !important;
 
             }
-            .doo-3 {
-                flex:3 !important;
+            .doo-4 {
+                flex:2 !important;
                 min-width: 15vw !important;
                 max-width: 24vw !important;
 
