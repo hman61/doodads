@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Doo UI</title>
+		<meta charset="utf-8">
+		<link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
+		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
+		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
+		<script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.mock.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
+		<!-- <script type="module" src="/dist/doo.ui.min.js"></script> -->
+		<script type="module" src="/dist/js/doo.ui.js"></script> 
+	</head>
+
+	<body>
+		<h3>Companies - Example</h3>
+		<script type="module" defer src="./Company.js"></script>
+		<doo-ui  bind="company" data-fetch="http://localhost:8001/apps/company/companies.json" template="./company.html"></doo-ui>
+
+	</body>
+
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<template>
+<section class="${class}">
+		<link rel="preload" href="/assets/css/doo/doo-flex-grid.css" as="style">
+		<link rel="stylesheet" href="/assets/css/doo/doo-flex-grid.css">
+		<div class="container">
+           <div class="fbody">
+                <div class="fhead">
+                    <div data-src="[${flex}]" bind="void" onclick="self.sortBy(this, `{{ reflect('${bind}') }}`)"  class="doo-sort {{ dooFlex('${flex}') }}">{{ reflect('${bind}') }}</div>
+                </div>
+                <div data-src="Doo.DAO" bind="${bind}">
+                    <div class="doo-flex doo-3">${1}</div>
+					<div class="doo-flex doo-1">${2}</div>
+                    <div class="doo-flex doo-2">${3}</div>
+					<div class="doo-flex doo-1">${4}</div>
+					<div class="doo-flex doo-2">${5}</div>
+					<div class="doo-flex doo-2">${6}</div>
+                    <div class="doo-flex doo-1">${7}</div>
+                </div> 
+			</div>
+        </div>
+        <style>
+            .fhead {
+                display: flex;
+                width: 100%;
+            }
+            .doo-flex {
+
+                flex-wrap: nowrap;
+                overflow: hidden;
+                overflow-x: hidden; 
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding: 0.5rem 0.25rem 0.25rem !important;
+            }
+            .doo-1 {
+                flex: 1 !important;
+                min-width: 5vw !important;
+                max-width: 8vw !important;
+                width: 2.5rem;
+                white-space: nowrap;
+            }
+            .doo-2 {
+                flex:2 !important;
+                min-width: 10vw !important;
+                max-width: 16vw !important;
+
+            }
+            .doo-3 {
+                flex:3 !important;
+                min-width: 15vw !important;
+                max-width: 24vw !important;
+
+            }
+            .doo-4 {
+                flex:4 !important;
+                min-width: 20vw !important;
+                max-width: 32vw !important;
+            }
+
+</style>
+ 	</section>
+</template>
