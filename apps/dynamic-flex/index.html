@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#main {
+  width: 250px;
+  height: 100px;
+  border: 1px solid #c3c3c3;
+  display: block;
+
+}
+
+#main > div {
+	display:flex;
+    width:100%
+}
+#main > div div {
+  flex: 1 0 25%;
+  overflow-x:hidden;
+  text-overflow: ellipsis;
+  xmax-width: 2.5rem;
+  white-space: nowrap;
+  flex-wrap: nowrap
+
+}
+#main > div div {
+  flex: 12 0 auto;
+}
+
+#main > div div:nth-child(1) {
+  flex: 0 1 25%;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>Change flex with JavaScript</h1>
+
+<div id="main">
+   <div>	
+    <div style="background-color:coral;" id="redDiv">Red DIVasd</div>
+    <div style="background-color:lightblue;" id="myBlueDiv">sadsa</div>
+  </div>
+  <div>
+      <div style="background-color:coral;">Red DIV</div>
+    <div style="background-color:lightblue;" id="myBlueDiv2">hello</div>
+  </div>
+  <div>
+      <div style="background-color:coral;">Red DIV</div>
+    <div style="background-color:lightblue;" id="myBlueDiv3">|</div>
+  </div>
+
+</div>
+
+<p>Click the "Try it" button to set the value of the flex property to "200px" for the blue div element</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p><b>Note:</b> Internet Explorer 10 and earlier versions earlier versions do not support the flex property.</p>
+
+<script>
+function myFunction() {
+  document.getElementById("redDiv").style.flex = "1 0 20%";
+
+document.getElementById("myBlueDiv").style.flex = "0 0 20%";
+  document.getElementById("myBlueDiv2").style.flex = "0 0 20%";
+  document.getElementById("myBlueDiv3").style.flex = "0 0 20%";
+
+}
+</script>
+
+</body>
+</html>
