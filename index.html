@@ -4,10 +4,8 @@
     <title>Hello World</title>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-    <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@0.9.11/dist/doo.ui.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
     <script  src="/dist/doo.ui.min.js"></script>
-    <!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
-
     <link href="/assets/css/styles.css" rel="preload" as="style" />
     <link href="/assets/css/styles.css" rel="stylesheet" />
 
@@ -22,63 +20,48 @@
             };
           }
         }
-      );
- 
+      )
     </script>
-<script>
-  window.info = [{
-                    company:'Doo.ui',
-                    fname:'Doolio',
-                    lname:'One',
-                    city: 'Lake Oswego',
-                    phone: '310 555-1212',
-                    caption: 'Fast, Clean & Powerful'
-                  }]
-</script>
-
-
-
-
+  <script>
+    window.info = [{
+                      company:'Doo.ui',
+                      fname:'Doolio',
+                      lname:'One',
+                      city: 'Lake Oswego',
+                      phone: '310 555-1212',
+                      caption: 'Fast, Clean & Powerful'
+                    }]
+  </script>
 </head>
 
-  <body>
+<body style="background-color: silver;">
+  <template id="t1">
+    <section>
+      <h3 data-src="this.data" bind="greeting" style="color: red;">Hello {{say}}</h3>
+    </section>
+  </template>
+  <template id="t2">
+    <section>
+      <h1 data-src="this.data" bind="country">Hello {{say}}!</h1>
+    </section>
+  </template>
+  <center>
+    <doo-hello template="#t1"></doo-hello>
+    <doo-hello template="#t2"></doo-hello>
 
- 
+    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/contacts/index.html">Contacts</a></h3>
+    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/olympics/index.html">Olympics</a></h3>
+    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/todomvc/dooui/index.html">ToDoo MVC</a></h3>
+    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/doo-computed/index.html">Computed Functions Sample</a></h3>
+    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps">More Examples ...</a></h3>
 
-    <template id="t1">
-      <section>
-        <h3 data-src="this.data" bind="greeting" style="color: red;">Hello {{say}}</h3>
-      </section>
-    </template>
-    <template id="t2">
-      <section>
-        <h1 data-src="this.data" bind="country">Hello {{say}}!</h1>
-      </section>
-    </template>
-    <center>
-      <doo-hello template="#t1"></doo-hello>
-      <doo-hello template="#t2"></doo-hello>
-
-
-      <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/contacts/index.html">Contacts</a></h3>
-      <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/olympics/index.html">Olympics</a></h3>
-      <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/todomvc/dooui/index.html">ToDoo MVC</a></h3>
-      <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/doo-computed/index.html">Computed Functions Sample</a></h3>
-
-      <doo-ui 
-        class="flex justify-center mt-2"
-        bind="contacts"
-        data-fetch="window.info"
-        template="/doodads/card/card.html" 
-        data-map="company|fname|lname|city|phone|caption">
-      </doo-ui>
-
-
- 
-    </center>
-  
-  
-  
-
+    <doo-ui 
+      class="flex justify-center mt-2"
+      bind="contacts"
+      data-fetch="window.info"
+      template="/doodads/card/card.html" 
+      data-map="company|fname|lname|city|phone|caption">
+    </doo-ui>
+  </center>
   </body>
 </html>
