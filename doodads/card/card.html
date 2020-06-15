@@ -5,8 +5,7 @@
     <link href="/assets/css/styles.css" rel="stylesheet" />
     <div data-src="Doo.DAO" bind="${bind}" class="max-w-sm w-full lg:max-w-full lg:flex">
     <div
-      class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-      style="font-size: 8rem; background-color: darkgrey"
+      class="tagline h-24 lg:h-auto lg:w-48  flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
     >${1}</div>
       <div
         class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
@@ -37,6 +36,22 @@
         </div>
       </div>
     </div>
+    <style>
+        .tagline {
+          background-color: gray;
+        }
+        @media (max-width: 479px) {
+          .tagline {
+                font-size: 6rem;
+          }  
+        }  
+        @media (min-width: 479px) {
+          .tagline {
+            font-size: 3rem;
+          }
+        }  
+
+    </style>
 
   </section>
 </template>
