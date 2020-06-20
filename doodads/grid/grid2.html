@@ -8,8 +8,7 @@
 		<div class="container">
            <div class="fbody">
                 <div class="fhead">
-                    <div  data-src="${flex}" bind="void" onclick="self.sortBy(this, `{{ reflect('${bind}') }}`)"  class="doo-capitalize doo-sort {{ dooFlex() }}">{{ reflect('${bind}') }}</div>
-                    <!-- <div dynamic="true" data-src="${flex}" bind="${bind}" onclick="self.sortBy(this, `{{ reflect('${bind}') }}`)"  class="doo-capitalize doo-sort doo-{{ Flex() }}">{{ reflect('${bind}') }}</div> -->
+                    <div dynamic="true" data-src="${data-map}" bind="${bind}" onclick="self.sortBy(this, `{{ fieldName }}`)"  class="doo-capitalize doo-sort {{ dooFlex() }}">{{ fieldName }}</div>
                 </div>
                 <div data-src="Doo.DAO" bind="${bind}">
                     <div dynamic="true" data-src="${data-map}" bind="${bind}" class="doo-flex doo-{{ flex }}">{{ fieldName }}</div>
