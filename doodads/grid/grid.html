@@ -9,18 +9,11 @@
            <div class="fbody">
                 <div class="fhead">
                     <div  data-src="${flex}" bind="void" onclick="self.sortBy(this, `{{ reflect('${bind}') }}`)"  class="doo-capitalize doo-sort {{ dooFlex() }}">{{ reflect('${bind}') }}</div>
-                    <!-- <div dynamic="true" data-src="${flex}" bind="${bind}" onclick="self.sortBy(this, `{{ reflect('${bind}') }}`)"  class="doo-capitalize doo-sort doo-{{ Flex() }}">{{ reflect('${bind}') }}</div> -->
                 </div>
                 <div data-src="Doo.DAO" bind="${bind}">
                     <div dynamic="true" data-src="${data-map}" bind="${bind}" class="doo-flex doo-{{ flex }}">{{ fieldName }}</div>
                 </div> 
             </div>
         </div>
-        <style>
-            /* .fhead {
-                display: flex;
-                width: 100%;
-            } */
-        </style>
-    </section>
+     </section>
 </template>
