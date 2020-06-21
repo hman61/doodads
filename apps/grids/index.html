@@ -35,7 +35,7 @@
 			data-fetch="http://localhost:8001/apps/olympics/data/athletes.json" 
 			template="/doodads/grid/grid.html"
 			data-map="Doo.reflect"
-			flex="4|1|2|1|2|2|1|1|1|1"
+			flex="4|1|2|1|2|2|*1|*1|*1|*1"
 			>
 		</doo-ui>
 		<doo-ui
@@ -44,8 +44,8 @@
 			bind="athletes" 
 			data-fetch="http://localhost:8001/apps/olympics/data/athletes.json" 
 			template="/doodads/grid/grid.html"
-			data-map="athlete|age|country|date"
-			flex="3|*1*|2|*2*"
+			data-map="n(),Row#|athlete|age|country|date"
+			flex="*1|3|*1*|2|*2*"
 			>
 		</doo-ui>
 	</body>
