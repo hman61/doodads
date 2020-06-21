@@ -170,7 +170,7 @@
 }
 .doo-end {
     display: block !important;
-    text-align: end !important;
+    text-align: end;
 }
 
 
