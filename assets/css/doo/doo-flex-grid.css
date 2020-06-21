@@ -164,6 +164,14 @@
 *, ::before, ::after {
     box-sizing:unset;
 }
+.doo-center {
+    display:block !important;
+    text-align: center !important;
+}
+.doo-end {
+    display: block !important;
+    text-align: end !important;
+}
 
 
 

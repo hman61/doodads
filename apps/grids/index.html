@@ -13,8 +13,8 @@
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<!-- <script src="/dist/js/Mock.js"></script> -->
 
-		<script  src="/dist/doo.ui.min.js"></script>
-		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
+		<!-- <script  src="/dist/doo.ui.min.js"></script> -->
+		<script type="module" src="/dist/js/doo.ui.js"></script>
 
 		<!-- data-fetch="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json"  -->
 
@@ -45,7 +45,7 @@
 			data-fetch="http://localhost:8001/apps/olympics/data/athletes.json" 
 			template="/doodads/grid/grid.html"
 			data-map="athlete|age|country|date"
-			flex="3|1|2|3"
+			flex="3|*1*|2|*2*"
 			>
 		</doo-ui>
 	</body>
