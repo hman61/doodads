@@ -8,18 +8,12 @@
 		<div class="container">
            <div class="fbody">
                 <div class="fhead">
-                    <div data-src="[${flex}]" bind="void" onclick="self.sortBy(this, `{{ reflect('${bind}') }}`)"  class="doo-capitalize doo-sort {{ dooFlex('${flex}') }}">{{ reflect('${bind}') }}</div>
+                    <div data-src="${flex}" bind="void" onclick="{{ dooSort() }}"  class="doo-capitalize doo-sort {{ dooFlex() }} doo-center">{{ dooReflect() }}</div>
                 </div>
                 <div data-src="Doo.DAO" bind="${bind}">
-                    <div dynamic="true" data-src="[${flex}]" bind="${bind}" class="doo-flex doo-{{ flex }}">{{ name }}</div>
+                    <div dynamic="true" data-src="${data-map}" bind="${bind}" class="doo-flex doo-{{ flex }} {{ flexJustify }}">{{ fieldName }}</div>
                 </div> 
             </div>
         </div>
-        <style>
-            /* .fhead {
-                display: flex;
-                width: 100%;
-            } */
-        </style>
-    </section>
+     </section>
 </template>
