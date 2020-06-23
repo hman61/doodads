@@ -12,21 +12,25 @@
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<script src="/dist/js/Mock.js"></script>
 
-		<script src="/dist/doo.ui.min.js"></script>
-		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
+		<!-- <script src="/dist/doo.ui.min.js"></script> -->
+		<script type="module" src="/dist/js/doo.ui.js"></script>
 		<script>
-			window.menu1 = ['Home','Products','Sample','About']
-			window.menu2 = [{nav:'Home1'},{nav:'Products'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
 			window.contacts = new Mock('circle', 5)
+			var pill2 = ['Home','Products','Sample','Download','About']
 		</script>
-		<doo-datastore>
-			<!-- <data  bind="menu1" data-fetch="[{nav:'Home2'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]" ></data> -->
-		</doo-datastore>
+		<doo-global>
+			<data  name="menu" data-fetch="[Home,Products,Sample,Download,About]" ></data>
+			<data  name="menu3" data-fetch="window.menu3" ></data>
+			<data  name="contacts" data-fetch="window.contacts" ></data>
+			<data  name="pill" data-fetch="var.pill2" ></data>
+		</doo-global>
 
 	</head>
 
 
 	<body>
+
+		
 
 		<div class="form-container" style="margin-bottom:1rem;width:100%;position: sticky; top:0; background-color: white;">
 			<a class="doo-logo" href="/apps"> :: bars</a>
@@ -52,23 +56,31 @@
 
 			</div>
 		</div>	
-		<h3>bar/bar.html</h3>
+		<h3>bar/bar.html - global</h3>
 		<doo-ui
 			class="p-2 bg-gray-400" 
 			bind="menu"
-			data-fetch="window.menu1"
 			data-map="0"
 			template="/doodads/bar/bar.html"
 			rounded="rounded"
 			bg="bg-pink-500"
 			text="text-white"
-		>
-		</doo-ui>
+		></doo-ui>
+		<h3>bar/bar.html - local</h3>
+		<doo-ui
+			class="p-2 bg-gray-400" 
+			bind="this"
+			data-map="0"
+			data-fetch="[Home One,Products,Sample,Download,About]"
+			template="/doodads/bar/bar.html"
+			rounded="rounded"
+			bg="bg-pink-500"
+			text="text-white"
+		></doo-ui>
 		
 		<h3>bar/pill.html</h3>
 		<doo-ui class="pl-2 pr-2 pb-2 bg-gray-500" 
 			bind="pill"
-			data-fetch="[Home,Products,Sample,About,Coolio]"
 			data-map="0"
 			template="/doodads/pill/pill.html"
 			rounded="rounded-full"
@@ -78,9 +90,8 @@
 		<h3>bar/bar-evenly.html</h3>
 		<doo-ui
 			class="p-2 bg-gray-600" 
-			bind="menu2"
-			data-fetch="window.menu2"
-			data-map="nav"
+			bind="menu"
+			data-map="0"
 			template="/doodads/bar/bar-evenly.html"
 		>
 		</doo-ui>
@@ -88,7 +99,6 @@
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
 			bind="menu"   
-			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
 			template="/doodads/bar/bar-1-n.html"
 		>
@@ -97,7 +107,6 @@
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
 			bind="menu"   
-			data-fetch="[Home,Products,Sample,About]"
 			data-map="0"
 			template="/doodads/bar/bar-n-1.html"
 		>
@@ -105,7 +114,7 @@
 		<h3>bar/bar-start.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="menu5"   
+			bind="this.menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
 			template="/doodads/bar/bar-start.html"
@@ -114,7 +123,7 @@
 		<h3>bar/bar-center.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="menu5"   
+			bind="this.menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
 			template="/doodads/bar/bar-center.html"
@@ -124,12 +133,13 @@
 		<h3>bar/bar-end.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="menu5"   
+			bind="this.menu5"   
 			data-fetch="[Home,Products,Sample,Contact Us,About]"
 			data-map="0"
 			template="/doodads/bar/bar-end.html"
 		>
 		</doo-ui>
+	
 		<h3>circle/circle.html</h3>
 		<doo-ui 
 			bind="contacts"
@@ -140,23 +150,23 @@
 		<h3>circle/circle2.html</h3>
 		<doo-ui 
 			bind="contacts"
-			data-fetch="window.contacts" 
 			template="/doodads/circle/circle2.html"
 			data-map="fname.substring(0,1)|lname.substring(0,1)"
 			>
 		</doo-ui>
 		<doo-ui 
 			bind="contacts"
-			data-fetch="window.contacts"
 			template="/doodads/bar/bar-2.html" 
 			data-map="fname|lname">
 		</doo-ui>
 		<doo-ui 
 			bind="contacts"
-			data-fetch="window.contacts"
 			template="/doodads/bar/bar-3.html" 
 			data-map="avatar|fname|lname">
 		</doo-ui>
+			
+	
+	
 	</body>
 </html>
 
