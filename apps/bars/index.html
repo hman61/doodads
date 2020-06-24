@@ -12,18 +12,21 @@
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<script src="/dist/js/Mock.js"></script>
 
-		<!-- <script src="/dist/doo.ui.min.js"></script> -->
-		<script type="module" src="/dist/js/doo.ui.js"></script>
+		<script src="/dist/doo.ui.min.js"></script>
+		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
 		<script>
-			window.contacts = new Mock('circle', 5)
-			var pill2 = ['Home','Products','Sample','Download','About']
+			var contacts = new Mock('circle', 5)
+			var pill = ['Home','Products','Sample','Download','About']
+			var nav = [{nav:'Home2'},{nav:'Products2'},{nav:'Sample2'},{nav:'Download2'},{nav:'About Us2'}]
 		</script>
-		<doo-global>
-			<data  name="menu" data-fetch="[Home,Products,Sample,Download,About]" ></data>
-			<data  name="menu3" data-fetch="window.menu3" ></data>
-			<data  name="contacts" data-fetch="window.contacts" ></data>
-			<data  name="pill" data-fetch="var.pill2" ></data>
-		</doo-global>
+
+		<doo-bind>
+			<data  name="menu" 	data-fetch="[Home,Products,Sample,Download,About]" />
+			<data  name="topmenu" data-fetch="[Home,Products,Sample,Contact Us,About]" />
+			<data  name="topmenu2"	data-fetch="var.nav" />
+			<data  name="contacts" data-fetch="var.contacts" />
+			<data  name="pill" data-fetch="var.pill" />
+		</doo-bind>
 
 	</head>
 
@@ -57,6 +60,7 @@
 			</div>
 		</div>	
 		<h3>bar/bar.html - global</h3>
+
 		<doo-ui
 			class="p-2 bg-gray-400" 
 			bind="menu"
@@ -66,18 +70,18 @@
 			bg="bg-pink-500"
 			text="text-white"
 		></doo-ui>
-		<h3>bar/bar.html - local</h3>
-		<doo-ui
-			class="p-2 bg-gray-400" 
-			bind="this"
+		<h3>bar/bar.html - using <i>bind="this.menu"</i> makes the dataset local to the instance and not affected when a menu item is added</h3>
+		<doo-ui 
+			class="p-2 bg-teal-400"
+			bind="this.menu"
 			data-map="0"
-			data-fetch="[Home One,Products,Sample,Download,About]"
 			template="/doodads/bar/bar.html"
+			xlink="styles"
+
 			rounded="rounded"
-			bg="bg-pink-500"
+			bg="bg-red-500"
 			text="text-white"
 		></doo-ui>
-		
 		<h3>bar/pill.html</h3>
 		<doo-ui class="pl-2 pr-2 pb-2 bg-gray-500" 
 			bind="pill"
@@ -98,7 +102,7 @@
 		<h3>bar/bar-1-n.html</h3>
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
-			bind="menu"   
+			bind="menu"
 			data-map="0"
 			template="/doodads/bar/bar-1-n.html"
 		>
@@ -114,8 +118,7 @@
 		<h3>bar/bar-start.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="this.menu5"   
-			data-fetch="[Home,Products,Sample,Contact Us,About]"
+			bind="this.topmenu"        
 			data-map="0"
 			template="/doodads/bar/bar-start.html"
 		>
@@ -123,19 +126,17 @@
 		<h3>bar/bar-center.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="this.menu5"   
-			data-fetch="[Home,Products,Sample,Contact Us,About]"
+			bind="this.topmenu"   
 			data-map="0"
 			template="/doodads/bar/bar-center.html"
 		>
 		</doo-ui>
 
-		<h3>bar/bar-end.html</h3>
+		<h3>bar/bar-end.html - (data-map = "nav")</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="this.menu5"   
-			data-fetch="[Home,Products,Sample,Contact Us,About]"
-			data-map="0"
+			bind="this.topmenu2"   
+			data-map="nav"
 			template="/doodads/bar/bar-end.html"
 		>
 		</doo-ui>
@@ -143,7 +144,6 @@
 		<h3>circle/circle.html</h3>
 		<doo-ui 
 			bind="contacts"
-			data-fetch="window.contacts" 
 			template="/doodads/circle/circle.html"
 			data-map="avatar">
 		</doo-ui>
@@ -164,9 +164,6 @@
 			template="/doodads/bar/bar-3.html" 
 			data-map="avatar|fname|lname">
 		</doo-ui>
-			
-	
-	
 	</body>
 </html>
 
