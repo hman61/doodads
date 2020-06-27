@@ -11,5 +11,9 @@
   "repository": "https://github.com/hman61/dooui-min.git",
   "devDependencies": {
     "local-web-server": "^4.0.0"
+  },
+  "dependencies": {
+    "bulma": "^0.9.0",
+    "tailwindcss": "^1.4.6"
   }
 }
