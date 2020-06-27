@@ -11,17 +11,14 @@
 		<title>Doo UI</title>
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.mock.min.js"></script> -->
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
-		<script src="/dist/js/Mock.js"></script>
 
 		<script  src="/dist/doo.ui.min.js"></script>
 		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
-		<script>
-			//window.menu = [{nav:'Home'},{nav:'Products2'},{nav:'Sample'},{nav:'Download'},{nav:'About'}]
-            window.contacts = new Mock('circle', 3)
-            
-            
-		</script>
-				<!-- data-fetch="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json"  -->
+		<doo-bind>
+			<!-- <data name="athletes" data-fetch="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json"  -->
+				<data name="athletes" data-fetch="/apps/olympics/data/athletes.json" /> 
+		</doo-bind>
+
 
 	</head>
 
@@ -36,11 +33,20 @@
 			class="flex justify-evenly w-full" 
 			link="styles"
 			bind="athletes" 
-			data-fetch="http://localhost:8001/apps/olympics/data/athletes.json" 
 			template="/doodads/table/table-3.html"
 			data-map="athlete|sport|country"
-			data-label-map="[Athlete,Sport,Country]"
+			data-map-label="Athlete|Sport|Country"
 		></doo-ui>
+		<doo-ui
+			class="mt-2 flex justify-evenly w-full bg-gray-500" 
+			link="styles"
+			bind="athletes" 
+			data-src="https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json"
+			template="/doodads/table/table-3.html"
+			data-map="athlete|gold|date"
+			data-map-label="Athlete|Gold|Date"
+		></doo-ui>
+
 	</body>
 </html>
 

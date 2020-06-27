@@ -6,6 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
     <script  src="/dist/doo.ui.min.js"></script>
+    <!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
     <link href="/assets/css/styles.css" rel="preload" as="style" />
     <link href="/assets/css/styles.css" rel="stylesheet" />
 
@@ -58,7 +59,7 @@
     <doo-ui 
       class="flex justify-center mt-2"
       bind="contacts"
-      data-fetch="window.info"
+      data-src="window.info"
       template="/doodads/card/card.html" 
       data-map="company|fname|lname|city|phone|caption">
     </doo-ui>

@@ -17,13 +17,12 @@
 		<script>
 			var contacts = new Mock('circle', 5)
 			var pill = ['Home','Products','Sample','Download','About']
-			var nav = [{nav:'Home2'},{nav:'Products2'},{nav:'Sample2'},{nav:'Download2'},{nav:'About Us2'}]
+			var nav = [{label:'Home2'},{label:'Products2'},{label:'Sample2'},{label:'Download2'},{label:'About Us2'}]
+	
 		</script>
 
 		<doo-bind>
-			<data  name="menu" 	data-fetch="[Home,Products,Sample,Download,About]" />
-			<data  name="topmenu" data-fetch="[Home,Products,Sample,Contact Us,About]" />
-			<data  name="topmenu2"	data-fetch="var.nav" />
+			<data  name="menu" 	data-fetch="[Home,Products,Sample,Contact Us,About]" />
 			<data  name="contacts" data-fetch="var.contacts" />
 			<data  name="pill" data-fetch="var.pill" />
 		</doo-bind>
@@ -40,7 +39,7 @@
 
 			<div class="h-form" style="align-items:flex-end;width:100%">
 				<div>
-					<label>Add a Menu Item</label>
+					<label>Add a Menu Item (reactive)</label>
 					<input id="test" value=""/>
 				</div>
 				<div>
@@ -59,7 +58,8 @@
 
 			</div>
 		</div>	
-		<h3>bar/bar.html - global</h3>
+		<h3>bar/bar.html - binding data from the global doo-bind element</h3>
+		<h4>When is using plain arrays, the data-map attribute is set to "0"</h4>
 
 		<doo-ui
 			class="p-2 bg-gray-400" 
@@ -70,11 +70,14 @@
 			bg="bg-pink-500"
 			text="text-white"
 		></doo-ui>
-		<h3>bar/bar.html - using <i>bind="this.menu"</i> makes the dataset local to the instance and not affected when a menu item is added</h3>
+		
+		<h3>bar/bar.html - with local data-src</h3>
+		<h4>When using the <i>data-src</i> attribute, that makes the dataset local to the component instance and is not affected when a menu item is added using the reactive form above</h4>
 		<doo-ui 
 			class="p-2 bg-teal-400"
-			bind="this.menu"
-			data-map="0"
+			bind="menu"
+			data-src="var.nav"
+			data-map="label"
 			template="/doodads/bar/bar.html"
 			xlink="styles"
 
@@ -82,6 +85,7 @@
 			bg="bg-red-500"
 			text="text-white"
 		></doo-ui>
+
 		<h3>bar/pill.html</h3>
 		<doo-ui class="pl-2 pr-2 pb-2 bg-gray-500" 
 			bind="pill"
@@ -118,7 +122,8 @@
 		<h3>bar/bar-start.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="this.topmenu"        
+			bind="menu"        
+			date-src="var.menu"
 			data-map="0"
 			template="/doodads/bar/bar-start.html"
 		>
@@ -126,17 +131,19 @@
 		<h3>bar/bar-center.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="this.topmenu"   
+			bind="menu"   
+			date-src="var.menu"
 			data-map="0"
 			template="/doodads/bar/bar-center.html"
 		>
 		</doo-ui>
 
-		<h3>bar/bar-end.html - (data-map = "nav")</h3>
+		<h3>bar/bar-end.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="this.topmenu2"   
-			data-map="nav"
+			bind="menu"   
+			date-src="var.menu"
+			data-map="0"
 			template="/doodads/bar/bar-end.html"
 		>
 		</doo-ui>
@@ -164,6 +171,7 @@
 			template="/doodads/bar/bar-3.html" 
 			data-map="avatar|fname|lname">
 		</doo-ui>
+	
 	</body>
 </html>
 
