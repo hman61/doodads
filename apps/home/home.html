@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<template>
+  <section>
+    <link rel="stylesheet" href="/apps/home/assets/css/w3.css">
+    <link rel="stylesheet" href="/apps/home/assets/css/css.css">
+
+    <link rel="stylesheet" href="/apps/todomvc/dooui/node_modules/todomvc-common/base.css">
+    <link rel="stylesheet" href="/apps/todomvc/dooui/node_modules/todomvc-app-css/index.css">
+    <style> 
+      html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+      .slides {display:none}
+      .show {display:block}
+      .w3-tag, .fa {cursor:pointer}
+      .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+    </style>
+    <!-- Links (sit on top) -->
+    <div  class="w3-top nav">
+      <div  class="w3-row w3-large w3-light-grey">
+        <div data-src="[Home,Todo,About,Contact]" bind="topnav" class="w3-col s3">
+          <a href="#{{0}}" class="w3-button w3-block">{{0}}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <a name="Home" />
+    <div  class="w3-content"  style="max-width:1100px;margin-top:3rem;margin-bottom:80px">
+      <div class="w3-panel w3-bottombar" >
+        <h3 style="margin-bottom: 1rem;">Doo.ui.org - Examples</h3>
+      </div>
+    
+      <!-- Slideshow -->
+      <div class="w3-row w3-container" >
+          <div data-src="[Rivian Electric Trucks,Rivian R1T,R1T - Oregon Woods,Rivian SUV,Rivian R1S]" bind="rivian" class="w3-display-container slides" id="{{ $id() }}">
+              <div class="truck-img" style="background-image:url('./assets/img/{{0}}.jpg');" ></div>
+              <div class="w3-display-topleft w3-container w3-padding-32">
+                <span class="w3-white w3-padding-large w3-animate-bottom" style="text-transform: capitalize;">{{0}}</span>
+              </div>
+          </div>
+
+          <!-- Slideshow next/previous buttons -->
+        <div class="wr-row w3-container w3-dark-grey w3-padding w3-xlarge slideshow-container">
+          <div class="w3-left" onclick="Home[0].plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+          <div class="w3-right" onclick="Home[0].plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+        
+          <div class="w3-center">
+            <span data-src="[1..5]" bind="slides" class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="Home[0].currentDiv('{{0}}')"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tiles -->
+      <div class="w3-row w3-container">
+        <div class="w3-center w3-padding-64">
+          <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
+        </div>
+      </div>  
+      <div class="w3-row w3-container">
+        <div  data-src="[Design,Branding,Consulting,Research]" bind="whatweoffer" class="w3-col l3 m6 w3-{{ greyShade() }} w3-container w3-padding-16">
+          <h3>{{ 0 }}</h3>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+      
+      <!-- Todo -->
+        <a name="Todo" />
+        <div class="w3-row-padding">
+          <doo-todoo template="/apps/todomvc/dooui/templates/todoo.html"></doo-todoo> 
+        </div>
+      
+      <!-- About  -->
+      <a name="About" />
+      <div class="w3-row-padding">
+        <doo-about context="document" template="./components/about/about.html" ></doo-about>
+      </div> 
+
+      <!-- Designers -->
+      <div class="w3-row-padding">
+        <div class="w3-center w3-padding-64">
+            <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Design Team</span>
+        </div>
+      </div>      
+      <div class="w3-row-padding">
+          <doo-designers 
+            context="document"
+            template="./components/designers/designers.html">
+          </doo-designers>
+      </div>
+
+      <!-- Contact -->
+      <div class="w3-container w3-center w3-padding-64" id="Contact">
+        <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
+      </div>
+
+      <div class="w3-container w3-center w3-padding-64">
+        <form target="#">
+          <div  data-src="[Name,Email,Subject,Message]" bind="contactform" class="w3-section">
+            <label>{{0}}</label>
+            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="{{0}}" required="">
+          </div>
+          <button type="submit" class="w3-button w3-block w3-black">Send</button>
+        </form>
+      </div>  
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+      <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+      <div class="w3-xlarge w3-section">
+          <doo-follow   template="./components/follow/follow.html"></doo-follow>      
+      </div>
+      <p>Powered by <a href="https://dooui.org" title="W3.CSS" target="_blank" class="w3-hover-text-green">dooui.org</a></p>
+    </footer>
+    <style>
+      .nav {
+        z-index:1000;
+        width: 100%;
+        left: 0;
+      }
+      .slides img {
+        margin-top: 1rem;
+        overflow-y: hidden;
+        width: 100%;
+      }
+      .truck-img {
+        height: 67vh;
+        vertical-align: bottom;
+        background-repeat: no-repeat;
+        background-color: #616161;
+        background-position: center;
+        background-size: 42rem auto;
+      }
+      .demodots {
+        margin-right: 0.25rem;
+      }
+    </style>
+  </section>  
+</template>
