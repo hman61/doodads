@@ -1,1 +1,2 @@
-# doodads
+# doodads 
+## Minumum Syntax - Maximum Performance
