@@ -70,8 +70,10 @@ body {
 }
 
 .todoapp h1 {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	
 	position: absolute;
-	top: -140px;
+	top: -180px;
 	width: 100%;
 	font-size: 80px;
 	font-weight: 200;

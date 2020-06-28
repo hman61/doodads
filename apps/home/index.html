@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doo-ui.org</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="preload" as="style" href="/apps/home/assets/css/w3.css">
+    <link rel="preload" as="style" href="/apps/home/assets/css/css.css">
+    <link rel="stylesheet" href="/apps/home/assets/css/w3.css">
+    <link rel="stylesheet" href="/apps/home/assets/css/css.css">
+		<!-- <script  src="/dist/doo.ui.min.js"></script> -->
+		<script  type="module" src="/dist/js/doo.ui.js"></script> 
+
+  </head>
+  <body style="min-width: 95%">
+    <script type="module">
+      import '/apps/todomvc/dooui/js/ToDoo.js'
+      import './components/about/About.js'
+      import './components/designers/Designers.js'
+      import './components/follow/Follow.js'
+      import "./Home.js"
+    </script> 
+
+    <doo-home context="document" template="./home.html"></doo-home>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<template>
+	<section>
+		<link rel="stylesheet" type="text/css" href="/apps/home/assets/css/w3.css">
+		<div class="w3-container w3-padding-64 w3-center" id="team">
+			<div class="w3-center w3-padding-64">
+				<span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">
+					About Us
+				</span>
+			</div>	
+			<div class="w3-row">
+				<br>
+				<div data-src="this.data" bind="people" class="w3-{{ fraction() }}">
+					<img src="./assets/img/{{avatar}}" alt="{{title}}" style="height:12rem;filter:grayscale(100%)" class="w3-circle w3-hover-opacity"/>
+					<h3>{{name}}</h3>
+					<p>{{title}}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>

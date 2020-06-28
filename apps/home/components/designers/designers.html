@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<template>
+    <section>
+        <link rel="stylesheet" type="text/css" href="./assets/css/w3.css">
+
+        <div class="w3-row-padding"> 
+            <div class="w3-third w3-margin-bottom"  data-src="./components/designers/data/people.json" bind="people">
+            <!-- <div class="w3-third w3-margin-bottom"   bind="${bind}"> -->
+
+                <div class="w3-card-4" style="margin:0.3em">
+                    <img src="./assets/img/{{avatar}}" alt="{{name}}" style="width:100%">
+                    <div class="w3-container">
+                        <h3>{{ name }}</h3>
+                        <p class="w3-opacity">{{ title }}</p>
+                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                        <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>      

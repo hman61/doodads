@@ -1,0 +1,16 @@
+{
+    "people" :  [
+        {"name":"Jane Doe",
+        "title": "Principal Designer",	
+        "avatar": "team1.jpg"
+        },
+        {"name":"Mike Ross",
+        "title": "Art Director",	
+        "avatar": "team2.jpg"
+        },
+        {"name":"John Doe",
+        "title": "Graphic Designer",	
+        "avatar": "team3.jpg"}
+           
+    ]
+}    
