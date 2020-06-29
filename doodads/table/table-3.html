@@ -7,30 +7,17 @@
       <table width="100%">  
         <thead>
           <tr>
-            <th data-src="${data-map-label}" bind="void" class="capitalize border ${border} ${rounded} py-1 px-3 ${bg} ${text}">{{ 0 }}</th>
+            <th data-src="${data-map-label}" bind="head" class="capitalize border py-1 px-3">{{ 0 }}</th>
           </tr>
         </thead>
         <tbody>
           <tr  bind="${bind}">
-              <td class="border ${border} ${rounded} py-1 px-3 ${bg} ${text}">${1}</td>
-              <td class="border ${border} ${rounded} py-1 px-3 ${bg} ${text}">${2}</td>
-              <td class="border ${border} ${rounded} py-1 px-3 ${bg} ${text}">${3}</td>
+              <td class="border  py-1 px-3 ">${1}</td>
+              <td class="border  py-1 px-3 ">${2}</td>
+              <td class="border  py-1 px-3 ">${3}</td>
             </tr>
           </tbody>
         </table>
       </div>
-    <style>
-      @media (max-width: 479px) {
-        .flex {
-          justify-content: space-evenly;
-        }
-        li {
-          margin-bottom: 0.5rem;
-        }
-        li:last-child {
-          margin-bottom: 0;
-        }
-      }  
-    </style>
   </section>
 </template>
