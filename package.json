@@ -3,11 +3,10 @@
   "version": "0.11.5",
   "description": "Doo.ui Example Project",
   "scripts": {
-    "start": "ws --spa index.html",
-    "dev": "ws -p 8001"
+    "start": "ws --spa index.html"
   },
   "author": "Henrik Javen",
-  "license": "MIT",
+  "license": "Apache 2.0",
   "repository": "https://github.com/hman61/dooui-min.git",
   "devDependencies": {
     "local-web-server": "^4.0.0"
