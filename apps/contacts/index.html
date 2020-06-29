@@ -8,12 +8,17 @@
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<script type="module" src="/dist/doo.ui.min.js"></script>
 		<!-- <script type="module" src="/src/js/doo.ui.js"></script>  -->
+		 
+		<link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
+		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
+
 	</head>
 
 	<body>
-		<h3>Contacts - Example</h3>
-		<link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
-		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
+		<div class="flex flex-1 justify-evenly">
+			<a class="doo-logo flex flex-1" href="/">&nbsp;| infinite scroll</a>
+		</div>
+		
 		<button style="margin-bottom:1rem" onclick="Contacts[0].addMore(50000)">Add 50,000 Contacts</button>
 
 		<div class="form-container">

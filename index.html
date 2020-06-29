@@ -39,19 +39,19 @@
 </head>
 
 <body style="background-color: silver;">
-  <div class="mt-2 flex flex-1 justify-evenly">
-    <a class="doo-logo flex flex-1" href="/apps"> | examples</a>
+  <div class="flex flex-1 justify-evenly">
+    <div class="doo-logo flex flex-1">&nbsp;| examples</div>
   </div>
 
 
   <template id="t1">
     <section>
-      <h3 data-src="this.data" bind="greeting" style="color: red;">Hello {{say}}</h3>
+      <h3 bind="greeting" style="color: red;">Hello {{say}}</h3>
     </section>
   </template>
   <template id="t2">
     <section>
-      <h1 data-src="this.data" bind="country">Hello {{say}}!</h1>
+      <h1 bind="country">Hello {{say}}!</h1>
     </section>
   </template>
   <center>
@@ -59,7 +59,7 @@
     <doo-hello template="#t2"></doo-hello>
 
     <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/grids/index.html">Grids</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/contacts/index.html">Contacts</a></h3>
+    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/contacts/index.html">Infinite Scroll</a></h3>
     <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/bars/index.html">Bars</a></h3>
     <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/nested/index.html">Nested Components</a></h3>
     <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/todomvc/dooui/index.html">ToDoo MVC</a></h3>
