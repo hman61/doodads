@@ -35,10 +35,8 @@
 
 		
 
-		<div class="form-container" style="margin-bottom:1rem;width:100%;position: sticky; top:0; background-color: white;">
-			<a class="doo-logo" href="/apps"> :: bars</a>
-
-			<div class="h-form" style="align-items:flex-end;width:100%">
+		<div class="form-container" style="margin-bottom:1rem;position: sticky; top:0; background-color: white;">
+			<div class="h-form" style="align-items:flex-end;">
 				<div>
 					<label>Add a Menu Item (reactive)</label>
 					<input id="test" value=""/>
@@ -75,7 +73,7 @@
 		<h3>bar/bar.html - with local data-src</h3>
 		<h4>When using the <i>data-src</i> attribute, that makes the dataset local to the component instance and is not affected when a menu item is added using the reactive form above</h4>
 		<doo-ui 
-			class="p-2 bg-teal-400"
+			class="p-2 bg-blue-400"
 			bind="menu"
 			data-src="var.nav"
 			data-map="label"

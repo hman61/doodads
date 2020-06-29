@@ -9,6 +9,9 @@
     <!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
     <link href="/assets/css/styles.css" rel="preload" as="style" />
     <link href="/assets/css/styles.css" rel="stylesheet" />
+    <link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
+		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
+
 
     <script defer type="module">
       Doo.define(
@@ -36,6 +39,11 @@
 </head>
 
 <body style="background-color: silver;">
+  <div class="mt-2 flex flex-1 justify-evenly">
+    <a class="doo-logo flex flex-1" href="/apps"> | examples</a>
+  </div>
+
+
   <template id="t1">
     <section>
       <h3 data-src="this.data" bind="greeting" style="color: red;">Hello {{say}}</h3>
