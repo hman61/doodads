@@ -49,7 +49,17 @@ body {
     color:lightgrey;
     text-overflow: ellipsis; 
     margin-bottom: 1rem;
+    text-decoration: none;
 }
 .doo-logo:before {
     content: 'doo.ui';
+}
+.flex {
+    display: flex;
+}
+.justify-evenly {
+    justify-content: space-evenly;
+}
+.flex-1 {
+    flex:1;
 }

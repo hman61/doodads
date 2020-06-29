@@ -16,34 +16,10 @@
 	</head>
 
 	<body>
-		<h3>Nested - Example</h3>
-		<div class="find">Find:
-			<input type="text" onkeyup="Nested[0].find(this)" class="input is-medium" placeholder="Search ..." />
+		<div class="flex flex-1 justify-evenly">
+			<a class="doo-logo flex flex-1" href="/">&nbsp;| nested components</a>
 		</div>
-		<div class="form-container">
-			<div class="h-form">
-				<div>
-					<label>First</label>
-					<input id="fname" value="">
-				</div>
-				<div>	
-					<label>M.I</label>
-					<input title="Middle Initial" id="middle" value="" size="1">
-				</div>
-				<div>
-					<label>Last</label>
-					<input id="lname" value="">
-				</div>
-				<div>
-					<label>City</label>
-					<input id="location.city" value="">
-				</div>	
-				<div>
-					<label>&nbsp;</label>
-					<button onclick="Nested[0].add(this.parentElement.parentElement)">Add</button>
-				</div>	
-			</div>
-		</div>
+
 		
 		<script type="module" defer src="js/Nested.js"></script>
 		<script type="module" defer src="/components/card/card.js"></script>
