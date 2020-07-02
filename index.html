@@ -46,13 +46,21 @@
 
   <template id="t1">
     <section>
-      <h2 bind="greeting" style="color:brown;">Hello {{say}}</h2>
+      <h2 bind="greeting" style="color:brown;">Hello {{say}}!</h2>
     </section>
   </template>
   <template id="t2">
     <section>
-      <h3 bind="greeting2">Hello {{say}}!</h3>
+      <h3 bind="greeting2">Hello {{say}}</h3>
+      <style> 
+        section {
+          width: 25%;
+          border: solid thin silver;
+          margin-bottom: 1rem;
+        }
+      </style>
     </section>
+
   </template>
   <center>
     <doo-hello template="#t1"></doo-hello>
