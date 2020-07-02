@@ -3,7 +3,6 @@
   <section>
     <link rel="stylesheet" href="/apps/home/assets/css/w3.css">
     <link rel="stylesheet" href="/apps/home/assets/css/css.css">
-
     <link rel="stylesheet" href="/apps/todomvc/dooui/node_modules/todomvc-common/base.css">
     <link rel="stylesheet" href="/apps/todomvc/dooui/node_modules/todomvc-app-css/index.css">
     <style> 
@@ -31,18 +30,17 @@
     
       <!-- Slideshow -->
       <div class="w3-row w3-container" >
-          <div data-src="[Rivian Electric Trucks,Rivian R1T,R1T - Oregon Woods,Rivian SUV,Rivian R1S]" bind="rivian" class="w3-display-container slides" id="{{ $id() }}">
-              <div class="truck-img" style="background-image:url('./assets/img/{{0}}.jpg');" ></div>
-              <div class="w3-display-topleft w3-container w3-padding-32">
-                <span class="w3-white w3-padding-large w3-animate-bottom" style="text-transform: capitalize;">{{0}}</span>
-              </div>
-          </div>
+        <div data-src="[Rivian Electric Trucks,Rivian R1T,R1T - Oregon Woods,Rivian SUV,Rivian R1S]" bind="rivian" class="w3-display-container slides" id="{{ $id() }}">
+            <div class="truck-img" style="background-image:url('./assets/img/{{0}}.jpg');" ></div>
+            <div class="w3-display-topleft w3-container w3-padding-32">
+              <span class="w3-white w3-padding-large w3-animate-bottom" style="text-transform: capitalize;">{{0}}</span>
+            </div>
+        </div>
 
-          <!-- Slideshow next/previous buttons -->
+        <!-- Slideshow next/previous buttons -->
         <div class="wr-row w3-container w3-dark-grey w3-padding w3-xlarge slideshow-container">
           <div class="w3-left" onclick="Home[0].plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
-          <div class="w3-right" onclick="Home[0].plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
-        
+          <div class="w3-right" onclick="Home[0].plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>        
           <div class="w3-center">
             <span data-src="[1..5]" bind="slides" class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="Home[0].currentDiv('{{0}}')"></span>
           </div>
@@ -63,10 +61,10 @@
       </div>
       
       <!-- Todo -->
-        <a name="Todo" />
-        <div class="w3-row-padding">
-          <doo-todoo template="/apps/todomvc/dooui/templates/todoo.html"></doo-todoo> 
-        </div>
+      <a name="Todo" />
+      <div class="w3-row-padding">
+        <doo-todoo template="/apps/todomvc/dooui/templates/todoo.html"></doo-todoo> 
+      </div>
       
       <!-- About  -->
       <a name="About" />
@@ -88,17 +86,19 @@
       </div>
 
       <!-- Contact -->
+ 
       <div class="w3-container w3-center w3-padding-16" id="Contact">
         <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
       </div>
 
-      <form target="#">
+      <form target="#" class="w3-container w3-center w3-padding-16">
         <div  data-src="[Name,Email,Subject,Message]" bind="contactform" class="w3-section">
           <label>{{0}}</label>
           <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="{{0}}" required="">
         </div>
         <button type="submit" class="w3-button w3-block w3-black">Send</button>
       </form>
+ 
     </div>
 
     <!-- Footer -->
