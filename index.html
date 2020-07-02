@@ -12,7 +12,6 @@
     <link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
 		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
 
-
     <script defer type="module">
       Doo.define(
         class Hello extends Doo {
@@ -20,17 +19,17 @@
             super();
             this.data = {
               greeting: { say: "World" },
-              country: [{ say: "USA" }, { say: "Doo.ui" }],
+              greeting2: [{ say: "World" }, { say: "Doo UI" }],
             };
           }
         }
       )
     </script>
   <script>
-    window.info = [{
+    const info = [{
                       company:'Doo.ui',
                       fname:'Doolio',
-                      lname:'One',
+                      lname:'Doe',
                       city: 'Lake Oswego',
                       phone: '310 555-1212',
                       caption: 'Fast, Clean & Powerful'
@@ -38,37 +37,43 @@
   </script>
 </head>
 
-<body style="background-color: silver;">
+<body class="bg-gray-500">
   <div class="flex flex-1 justify-evenly">
     <div class="doo-logo flex flex-1">&nbsp;| examples</div>
   </div>
 
-
   <template id="t1">
     <section>
-      <h3 bind="greeting" style="color: red;">Hello {{say}}</h3>
+      <h2 bind="greeting" style="color:brown;">Hello {{say}}!</h2>
     </section>
   </template>
   <template id="t2">
     <section>
-      <h1 bind="country">Hello {{say}}!</h1>
+      <h3 bind="greeting2">Hello {{say}}</h3>
+      <style> 
+        section {
+          width: 25%;
+          border: solid thin silver;
+          margin-bottom: 1rem;
+        }
+      </style>
     </section>
   </template>
+
   <center>
     <doo-hello template="#t1"></doo-hello>
     <doo-hello template="#t2"></doo-hello>
 
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/grids/index.html">Grids</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/contacts/index.html">Infinite Scroll</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/bars/index.html">Bars</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/nested/index.html">Nested Components</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/todomvc/dooui/index.html">ToDoo MVC</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/home/index.html">Sample Site</a></h3>
+    <a bind="${bind}" class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/grids/index.html">Grids</a>
+    <a bind="${bind}" class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/contacts/index.html">Contacts</a>
+    <a bind="${bind}" class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/bars/index.html">Bars</a>
+    <a bind="${bind}" class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/nested/index.html">Nested Components</a>
+    <a bind="${bind}" class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/home/index.html">Sample Site</a>
 
     <doo-ui 
       class="flex justify-center mt-2"
-      bind="contacts"
-      data-src="window.info"
+      bind="info"
+      data-src="info"
       template="/doodads/card/card.html" 
       data-map="company|fname|lname|city|phone|caption">
     </doo-ui>

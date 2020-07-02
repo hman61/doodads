@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello World</title>
+    <title>Doo.UI - Examples</title>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
     <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
-    <script  src="/dist/doo.ui.min.js"></script>
-    <!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
+<script type="module" src="/dist/js/doo.ui.js"></script>
     <link href="/assets/css/styles.css" rel="preload" as="style" />
     <link href="/assets/css/styles.css" rel="stylesheet" />
     <link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
 		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
-
+    <script>
+      let examples = [
+        {href:'grids',label:'Grids'},
+        {href:'contacts',label:'Contacts'},
+        {href:'nested',label:'Nested Components'},
+        {href:'home',label:'Example Site'}]
+    </script>
+    <template id="t1">
+      <section>
+        <a bind="${bind}" class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="${1}/index.html">${2}</a>
+      </section>
+  </template>
 </head>
 
-<body style="background-color: silver;">
+<body class="bg-gray-700">
   <div class="flex flex-1 justify-evenly">
-    <a class="doo-logo flex flex-1" href="/">&nbsp;| examples apps</a>
+    <a class="doo-logo flex flex-1" href="/">&nbsp;| example apps</a>
   </div>
+
   <center>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="grids/index.html">Grids</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="contacts/index.html">Contacts</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="bars/index.html">Bars</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="nested/index.html">Nested Components</a></h3>
-    <h3 class="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"><a href="apps/home/index.html">Sample Site</a></h3>
+    <doo-ui context="document"
+      bind="examples"
+      data-src="examples" 
+      css="w-48 bg-gray-400 hover:bg-gray-600 rounded mb-2"
+      data-map="href|label"
+      template="#t1"
+    ></doo-ui>        
   </center>
   </body>
 </html>
