@@ -16,28 +16,23 @@
 		<script src="/dist/doo.ui.min.js"></script>
 		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
 		<script>
-			var contacts = new Mock('circle', 5)
-			var pill = ['Home','Products','Sample','Download','About']
-			var nav = [{label:'Home2'},{label:'Products2'},{label:'Sample2'},{label:'Download2'},{label:'About Us2'}]
+			const contacts = new Mock('circle', 5)
+			const pill = ['Home','Products','Sample','Download','About']
+			const menu2 = [{label:'Home2'},{label:'Products2'},{label:'Sample2'},{label:'Download2'},{label:'About Us2'}]
 	
 		</script>
 
 		<doo-bind>
 			<data  name="menu" 	data-fetch="[Home,Products,Sample,Contact,About]" />
-			<data  name="contacts" data-fetch="var.contacts" />
-			<data  name="pill" data-fetch="var.pill" />
+			<data  name="contacts" data-fetch="contacts" />
+			<data  name="pill" data-fetch="pill" />
 		</doo-bind>
 
 	</head>
-
-
 	<body>
-
 		<div class="flex flex-1 justify-evenly">
 			<a class="doo-logo flex flex-1" href="/">&nbsp;| bars</a>
 		</div>
-
-
 		<div class="form-container" style="margin-bottom:1rem;position: sticky; top:0; background-color: white;">
 			<div class="h-form" style="align-items:flex-end;">
 				<div>
@@ -48,7 +43,6 @@
 					<label>&nbsp;</label>
 					<button onclick="Doo.DAO.append('menu', document.querySelector('#test').value)">Add</button>
 				</div>	
-
 				<div>
 					<label>Add a Pill</label>
 					<input id="pill" value=""/>
@@ -62,7 +56,6 @@
 		</div>	
 		<h3>bar/bar.html - binding data from the global doo-bind element</h3>
 		<p>When is using plain arrays, the data-map attribute is set to "0"</p>
-
 		<doo-ui
 			class="p-2 bg-gray-400" 
 			bind="menu"
@@ -77,12 +70,10 @@
 		<p>When using the <i>data-src</i> attribute, that makes the dataset local to the component instance and is not affected when a menu item is added using the reactive form above</p>
 		<doo-ui 
 			class="p-2 bg-blue-400"
-			bind="menu"
-			data-src="var.nav"
+			bind="menu2"
+			data-src="menu2"
 			data-map="label"
 			template="/doodads/bar/bar.html"
-			xlink="styles"
-
 			rounded="rounded"
 			bg="bg-red-500"
 			text="text-white"
@@ -94,8 +85,7 @@
 			data-map="0"
 			template="/doodads/pill/pill.html"
 			rounded="rounded-full"
-		>
-		</doo-ui>
+		></doo-ui>
 
 		<h3>bar/bar-evenly.html</h3>
 		<doo-ui
@@ -103,38 +93,38 @@
 			bind="menu"
 			data-map="0"
 			template="/doodads/bar/bar-evenly.html"
-		>
-		</doo-ui>
+		></doo-ui>
+		
 		<h3>bar/bar-1-n.html</h3>
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
 			bind="menu"
 			data-map="0"
 			template="/doodads/bar/bar-1-n.html"
-		>
-		</doo-ui>
+		></doo-ui>
+		
 		<h3>bar/bar-n-1.html</h3>
 		<doo-ui
 			class="bg-teal-600 p-2 mt-2" 
 			bind="menu"   
 			data-map="0"
 			template="/doodads/bar/bar-n-1.html"
-		>
-		</doo-ui>
+		></doo-ui>
+		
 		<h3>bar/bar-start.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
 			bind="menu"        
-			date-src="var.menu"
+			date-src="menu"
 			data-map="0"
 			template="/doodads/bar/bar-start.html"
-		>
-		</doo-ui>
+		></doo-ui>
+		
 		<h3>bar/bar-center.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
 			bind="menu"   
-			date-src="var.menu"
+			date-src="menu"
 			data-map="0"
 			template="/doodads/bar/bar-center.html"
 		>
@@ -144,7 +134,7 @@
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
 			bind="menu"   
-			date-src="var.menu"
+			date-src="menu"
 			data-map="0"
 			template="/doodads/bar/bar-end.html"
 		>
@@ -156,6 +146,7 @@
 			template="/doodads/circle/circle.html"
 			data-map="avatar">
 		</doo-ui>
+		
 		<h3>circle/circle2.html</h3>
 		<doo-ui 
 			bind="contacts"
@@ -172,8 +163,7 @@
 			bind="contacts"
 			template="/doodads/bar/bar-3.html" 
 			data-map="avatar|fname|lname">
-		</doo-ui>
-	
+		</doo-ui>	
 	</body>
 </html>
 
