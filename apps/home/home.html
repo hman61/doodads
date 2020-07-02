@@ -23,9 +23,9 @@
 
     <!-- Content -->
     <a name="Home" />
-    <div  class="w3-content w3-row w3-container"  style="margin-top:2rem;">
+    <div  class="w3-content w3-row w3-container"  style="max-width:1100px;margin-top:3rem;margin-bottom:80px">
       <div class="w3-panel w3-bottombar" >
-        <h3 style="margin-bottom: 1rem;">Example Templated Site</h3>
+        <!-- <h3 style="margin-bottom: 1rem;">Example Templated Site</h3> -->
       </div>
     
       <!-- Slideshow -->
@@ -86,19 +86,19 @@
       </div>
 
       <!-- Contact -->
- 
-      <div class="w3-container w3-center w3-padding-16" id="Contact">
-        <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
-      </div>
-
-      <form target="#" class="w3-container w3-center w3-padding-16">
-        <div  data-src="[Name,Email,Subject,Message]" bind="contactform" class="w3-section">
-          <label>{{0}}</label>
-          <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="{{0}}" required="">
+      <div class="w3-row-padding">
+        <div class="w3-container w3-center w3-padding-16" id="Contact">
+          <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
         </div>
-        <button type="submit" class="w3-button w3-block w3-black">Send</button>
-      </form>
- 
+
+        <form target="#" class="w3-container w3-center w3-padding-16">
+          <div  data-src="[Name,Email,Subject,Message]" bind="contactform" class="w3-section">
+            <label>{{0}}</label>
+            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="{{0}}" required="">
+          </div>
+          <button type="submit" class="w3-button w3-block w3-black">Send</button>
+        </form>
+      </div>
     </div>
 
     <!-- Footer -->
