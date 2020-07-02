@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Solid State by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta charset="utf-8">
+		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preload" href="/assets/css/styles.css" as="style" >
+		<link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
+		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
+		<title>Doo UI</title>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.mock.min.js"></script> -->
+		<script src="/dist/doo.mock.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
+		<script src="/dist/doo.ui.min.js"></script>
+		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			const example = [
+				{img:'pic01.jpg', id:'one', label: 'Magna arcu feugiat'},
+				{img:'pic01.jpg', id:'two', label: 'Tempus adipiscing'},
+				{img:'pic01.jpg', id:'tree', label: 'Nullam dignissim'},
+				{img:'pic01.jpg', id:'four', label: 'Vitae phasellus'}
+			]
+		</script>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Solid State</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+					<doo-ui
+						context="document"
+						bind="example"
+						data-src="example"
+						template="./html5up.html"
+					></doo-ui>	
+			</div>
+
+		<!-- Scripts -->
+<!--
+		<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+-->
+	</body>
+</html>
