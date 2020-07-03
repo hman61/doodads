@@ -6,62 +6,76 @@
 -->
 <html>
 	<head>
-		<title>Solid State by HTML5 UP</title>
+		<title>Doo UI & HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta charset="utf-8">
 		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
-		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
-		<title>Doo UI</title>
-		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.mock.min.js"></script> -->
-		<script src="/dist/doo.mock.min.js"></script>
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<script src="/dist/doo.ui.min.js"></script>
-		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
 
+		<link rel="preload" href="assets/css/main.css" as="style" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script>
 			const example = [
-				{img:'pic01.jpg', id:'one', label: 'Magna arcu feugiat'},
-				{img:'pic02.jpg', id:'two', label: 'Tempus adipiscing'},
-				{img:'pic03.jpg', id:'tree', label: 'Nullam dignissim'},
-				{img:'pic04.jpg', id:'four', label: 'Vitae phasellus'}
+				{img:'pic01.jpg', id:'one', label: 'Magna arcu feugiat - Nikon'},
+				{img:'pic02.jpg', id:'two', label: 'Tempus adipiscing - View'},
+				{img:'pic03.jpg', id:'tree', label: 'Nullam dignissim - Ax'},
 			]
+			const cards = [
+				{img:'pic04.jpg', id:'four', label: 'Magna arcu feugiat'},
+				{img:'pic05.jpg', id:'five', label: 'Tempus adipiscing'},
+				{img:'pic06.jpg', id:'six', label: 'Nullam dignissim'},
+				{img:'pic07.jpg', id:'seven', label: 'Vitae phasellus'}
+			]
+
 		</script>
 
 	</head>
-	<body class="is-preload">
+	<body>
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Solid State</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
-
+				<header id="header" class="alt">
+					<h1><a href="/">Solid State</a></h1>
+					<nav>
+						<a href="#menu">Menu</a>
+					</nav>
+				</header>
+				<section id="banner">
+					<div class="inner">
+						<div class="logo"><span class="icon fa-gem"></span></div>
+						<h2>This is Solid State</h2>
+						<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+					</div>
+				</section>
+				<section id="wrapper">
 					<doo-ui
 						context="document"
 						bind="example"
 						data-src="example"
 						template="./html5up.html"
-					></doo-ui>	
-			</div>
+					></doo-ui>
+				</section>
+				<section id="four" class="wrapper alt style1">
+					<div class="inner">
+						<h2 class="major">Vitae phasellus</h2>
+						<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+				 
+						<doo-ui
+							context="document"
+							bind="cards"
+							data-src="cards"
+							template="./html5up-card.html"
+						></doo-ui>
 
-		<!-- Scripts -->
-<!--
-		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
--->
+						<ul class="actions">
+							<li><a href="#" class="button">Browse All</a></li>
+						</ul>
+					</div>	
+				</section>
+			</div>
 	</body>
 </html>
