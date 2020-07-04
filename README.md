@@ -1,5 +1,5 @@
 # Doo.ui.org - doodads 
-https://en.wiktionary.org/wiki/doodad
+https://github.com/hman61/doodads/wiki/Documentation
 
 ## Your WebComponents on steroids 
 ### Minimal Syntax - Maximum Performance
