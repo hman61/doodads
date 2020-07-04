@@ -8,7 +8,7 @@ export default class About extends Doo {
 				{name:'Henrik Javen',
 				title: 'Founder - Doo.ui.org',	
 				avatar: 'h.jpg'},
-				{name:'Doolio',
+				{name:'Doolio Doe',
 				title: 'Lead Architect - Doo.ui.org',	
 				avatar: 'dope1.png'},
 			]	
