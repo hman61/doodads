@@ -1,7 +1,7 @@
 # Doo.ui.org - doodads 
 https://github.com/hman61/doodads/wiki/Documentation
 
-## Your WebComponents on steroids 
+## Your Web Components on Steroids 
 ### Minimal Syntax - Maximum Performance
 - WYSYWIG HTML
 - Reactive data binding
