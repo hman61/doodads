@@ -16,11 +16,9 @@
 
 		<doo-bind>
 			<data name="athletes" data-fetch="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/data/athletes.json" />
+			<data name="cars" data-fetch="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/data/cars.json" />
 		</doo-bind>
-
-
 	</head>
-
 
 	<body>
 		<div class="flex flex-1 justify-evenly">
@@ -39,10 +37,10 @@
 		<doo-ui
 			class="mt-1 p-4 rounded justify-evenly flex"
 			link="styles.css"
-			bind="athletes" 
+			bind="cars" 
 			template="/doodads/grid/grid.html"
-			data-map="athlete|age|country|date:Race Date"
-			flex="3|:1|2|:2:"
+			data-map="Year|Make|Model|Category:Body Style"
+			flex=":2:|3|3|4"
 		></doo-ui>
 	</body>
 </html>
