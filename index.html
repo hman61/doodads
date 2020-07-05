@@ -26,14 +26,23 @@
       )
     </script>
   <script>
-    const info = [{
-                      company:'Doo.ui',
-                      fname:'Doolio',
-                      lname:'Doe',
-                      city: 'Lake Oswego',
-                      phone: '310 555-1212',
-                      caption: 'Fast, Clean & Powerful'
-                    }]
+    const info = [
+      {
+        company:'Doo.ui',
+        fname:'Doolio',
+        lname:'Doe',
+        city: 'Lake Oswego',
+        phone: '310 555-1212',
+        caption: 'Fast, Clean & Powerful'
+      }]
+
+      const nav = [
+        {href:'/apps/grids/index.html',label:'Grids'},
+				{href:'/apps/contacts/index.html',label:'Contacts'},
+				{href:'/apps/nested/index.html',label:'Nested'},
+				{href:'/apps/home/index.html',label:'Sample Site'},
+        {href:'/apps/html5up/index.html',label:'HTML5 UP - Solid State'}
+      ]  
   </script>
 </head>
 
@@ -64,14 +73,12 @@
     <doo-hello template="#t1"></doo-hello>
     <doo-hello template="#t2"></doo-hello>
 
-    <a class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/grids/index.html">Grids</a>
-    <a class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/contacts/index.html">Contacts</a>
-    <a class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/bars/index.html">Bars</a>
-    <a class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/nested/index.html">Nested Components</a>
-    <a class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/home/index.html">Sample Site</a>
-    <a class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/html5up/index.html">HTML5 UP - Solid State</a>
-    <!-- <a class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="/apps/hyperspace/index.html">HTML5 UP - Hyperspace</a> -->
-
+    <doo-ui 
+      bind="nav"
+      data-src="nav"
+      template="/doodads/nav/nav.html"
+      data-map="href|label" >
+    </doo-ui>
 
     <doo-ui 
       class="flex justify-center mt-2"
