@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Doo UI & HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
+		<script src="/dist/doo.ui.min.js"></script>
+
+		<link rel="preload" href="assets/css/main.css" as="style" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			const example = [
+				{img:'pic01.jpg', id:'one', label: 'Magna arcu feugiat - Nikon'},
+				{img:'pic02.jpg', id:'two', label: 'Tempus adipiscing - View'},
+				{img:'pic03.jpg', id:'tree', label: 'Nullam dignissim - Ax'},
+			]
+			const cards = [
+				{img:'pic04.jpg', id:'four', label: 'Magna arcu feugiat'},
+				{img:'pic05.jpg', id:'five', label: 'Tempus adipiscing'},
+				{img:'pic06.jpg', id:'six', label: 'Nullam dignissim'},
+				{img:'pic07.jpg', id:'seven', label: 'Vitae phasellus'}
+			]
+
+		</script>
+
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="/">Solid State</a></h1>
+					<nav>
+						<a href="#menu">Menu</a>
+					</nav>
+				</header>
+				<section id="banner">
+					<div class="inner">
+						<div class="logo"><span class="icon fa-gem"></span></div>
+						<h2>This is Solid State</h2>
+						<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+					</div>
+				</section>
+				<section id="wrapper">
+					<doo-ui
+						context="document"
+						bind="example"
+						data-src="example"
+						template="./html5up.html"
+					></doo-ui>
+				</section>
+				<section id="four" class="wrapper alt style1">
+					<div class="inner">
+						<h2 class="major">Vitae phasellus</h2>
+						<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+				 
+						<doo-ui
+							context="document"
+							bind="cards"
+							data-src="cards"
+							template="./html5up-card.html"
+						></doo-ui>
+
+						<ul class="actions">
+							<li><a href="#" class="button">Browse All</a></li>
+						</ul>
+					</div>	
+				</section>
+			</div>
+			<section id="footer">
+				<div class="inner">
+					<h2 class="major">Get in touch</h2>
+					<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field">
+								<label for="name">Name</label>
+								<input type="text" name="name" id="name">
+							</div>
+							<div class="field">
+								<label for="email">Email</label>
+								<input type="email" name="email" id="email">
+							</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="4"></textarea>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message"></li>
+						</ul>
+					</form>
+					<ul class="contact">
+						<li class="icon solid fa-home">
+							Untitled Inc<br>
+							1234 Somewhere Road Suite #2894<br>
+							Nashville, TN 00000-0000
+						</li>
+						<li class="icon solid fa-phone">(000) 000-0000</li>
+						<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+						<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+						<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
+						<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+					</ul>
+					<ul class="copyright">
+						<li>© Untitled Inc. All rights reserved.</li><li>Demo Images: <a href="http://unsplash.com">Unsplash</a></li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</section>		
+	</body>
+</html>

@@ -8,7 +8,7 @@ export default class Home extends Doo {
 		this.slideIndex = 1
 	}
 
-	async afterRender() {
+	async dooAfterRender() {
 		this.showDivs(this.slideIndex);
 	}
 

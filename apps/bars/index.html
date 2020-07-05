@@ -8,24 +8,21 @@
 		<link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
 		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
 		<title>Doo UI</title>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.mock.min.js"></script> -->
 		<script src="/dist/doo.mock.min.js"></script>
-
-		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
-
 		<script src="/dist/doo.ui.min.js"></script>
 		<!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
 		<script>
 			const contacts = new Mock('circle', 5)
-			const pill = ['Home','Products','Sample','Download','About']
-			const menu2 = [{label:'Home2'},{label:'Products2'},{label:'Sample2'},{label:'Download2'},{label:'About Us2'}]
-	
+			const menu = ['Home','Products','Sample','Download','About']
+			const menu2 = [{label:'Home2'},{label:'Products2'},{label:'Sample2'},{label:'Download2'},{label:'About Us2'}]	
 		</script>
 
 		<doo-bind>
-			<data  name="menu" 	data-fetch="[Home,Products,Sample,Contact,About]" />
+			<data  name="menu" 	data-fetch="menu" />
 			<data  name="contacts" data-fetch="contacts" />
-			<data  name="pill" data-fetch="pill" />
+			<data  name="pill" data-fetch="menu" />
 		</doo-bind>
 
 	</head>
@@ -55,27 +52,27 @@
 			</div>
 		</div>	
 		<h3>bar/bar.html - binding data from the global doo-bind element</h3>
-		<p>When is using plain arrays, the data-map attribute is set to "0"</p>
+		<p>When using plain arrays, the data-map attribute is set to "0"</p>
 		<doo-ui
 			class="p-2 bg-gray-400" 
 			bind="menu"
 			data-map="0"
 			template="/doodads/bar/bar.html"
 			rounded="rounded"
-			bg="bg-pink-500"
+			bg="bg-gray-700"
 			text="text-white"
 		></doo-ui>
 		
 		<h3>bar/bar.html - with local data-src</h3>
 		<p>When using the <i>data-src</i> attribute, that makes the dataset local to the component instance and is not affected when a menu item is added using the reactive form above</p>
 		<doo-ui 
-			class="p-2 bg-blue-400"
-			bind="menu2"
-			data-src="menu2"
-			data-map="label"
+			class="p-2 bg-blue-600"
+			bind="menu"
+			data-src="menu"
+			data-map="0"
 			template="/doodads/bar/bar.html"
 			rounded="rounded"
-			bg="bg-red-500"
+			bg="bg-gray-800"
 			text="text-white"
 		></doo-ui>
 
@@ -114,18 +111,18 @@
 		<h3>bar/bar-start.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="menu"        
-			date-src="menu"
-			data-map="0"
+			bind="menu2"        
+			data-src="menu2"
+			data-map="label"
 			template="/doodads/bar/bar-start.html"
 		></doo-ui>
 		
 		<h3>bar/bar-center.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="menu"   
-			date-src="menu"
-			data-map="0"
+			bind="menu2"   
+			data-src="menu2"
+			data-map="label"
 			template="/doodads/bar/bar-center.html"
 		>
 		</doo-ui>
@@ -133,9 +130,9 @@
 		<h3>bar/bar-end.html</h3>
 		<doo-ui
 			class="bg-purple-600 p-2 mt-2" 
-			bind="menu"   
-			date-src="menu"
-			data-map="0"
+			bind="menu2"   
+			data-src="menu2"
+			data-map="label"
 			template="/doodads/bar/bar-end.html"
 		>
 		</doo-ui>

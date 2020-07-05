@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<template>
+  <nav>
+    <link href="/assets/css/styles.css" rel="preload" as="style" />
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+    <ul>
+      <li bind="${bind}">
+        <a tabindex="{{ n() }}" class="block bold w-48 bg-gray-400 hover:bg-gray-600 hover:text-white rounded mb-2" href="${1}">${2}</a>
+      </li>
+    </ul>
+  </nav>
+</template>
