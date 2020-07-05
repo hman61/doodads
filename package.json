@@ -1,13 +1,13 @@
 {
-  "name": "dooui-build",
-  "version": "0.11.5",
+  "name": "doodads",
+  "version": "0.12.7",
   "description": "Doo.ui Example Project",
   "scripts": {
     "start": "ws --spa index.html"
   },
   "author": "Henrik Javen",
   "license": "Apache 2.0",
-  "repository": "https://github.com/hman61/dooui-min.git",
+  "repository": "https://github.com/hman61/doodads.git",
   "devDependencies": {
     "local-web-server": "^4.0.0"
   }
