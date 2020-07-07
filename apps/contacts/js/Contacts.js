@@ -29,7 +29,7 @@ Doo.define(
 			this.data[this.defaultDataSet] = Doo.DAO.getData(this.defaultDataSet)
 			this.setScrollContainerHeight()
 			this.render(this.defaultDataSet, 0)
-			this.container.scrollTop = 0
+			this.scrollElem.parentElement.scrollTop = 0
 		}
 
 		addMore(cnt) {
@@ -40,7 +40,7 @@ Doo.define(
 			this.data[this.defaultDataSet] = Doo.DAO.getData(this.defaultDataSet)
 			this.setScrollContainerHeight()
 			this.render(this.defaultDataSet, 0)
-			this.container.scrollTop = 0
+			this.scrollElem.parentElement.scrollTop = 0
 			this.clearChildren()
 		}	
 
