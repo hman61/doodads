@@ -52,7 +52,7 @@ body {
     text-decoration: none;
 }
 .doo-logo:before {
-    content: 'doo.ui';
+    content: 'DooHTML';
 }
 .flex {
     display: flex;

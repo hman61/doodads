@@ -9,4 +9,4 @@ dist/js/*.js
 apps/contacts4/.DS_Store
 .DS_Store
 .jshintrc
-dist/doo.ui.js
+dist/doo.html.js
