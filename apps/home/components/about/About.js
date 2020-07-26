@@ -6,10 +6,10 @@ export default class About extends Doo {
 		this.data = {
 			'people': [
 				{name:'Henrik Javen',
-				title: 'Founder - Doo.ui.org',	
+				title: 'Founder - https://doohtml.com',	
 				avatar: 'h.jpg'},
 				{name:'Doolio Doe',
-				title: 'Lead Architect - Doo.ui.org',	
+				title: 'Lead Architect - https://doohtml.com',	
 				avatar: 'dope1.png'},
 			]	
 					
