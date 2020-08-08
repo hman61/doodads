@@ -11,8 +11,8 @@
 		<title>Doo HTML</title>
 		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.html.min.js"></script> -->
 
-		<!-- <script  src="/dist/doo.html.min.js"></script> -->
-		<script type="module" src="/dist/js/doo.html.js"></script>
+		<script  src="/dist/doo.html.min.js"></script>
+		<!-- <script type="module" src="/dist/js/doo.html.js"></script> -->
 
 		<doo-bind>
 			<data name="athletes" data-fetch="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/data/athletes.json" />
@@ -25,22 +25,22 @@
 			<a class="doo-logo flex flex-1" href="/">&nbsp;| grids</a>
 		</div>
 		
-		<doo-ui
+		<doo-html
 			class="mt-1 p-4 rounded justify-evenly flex w-full"
 			link="styles.css"
 			bind="athletes" 
 			template="/doodads/grid/grid.html"
 			data-map="Doo.reflect"
 			flex="2|:1:|2|:1:|:2:|2|:1|:1|:1|:1"
-		></doo-ui>
-		<doo-ui
+		></doo-html>
+		<doo-html
 			class="mt-1 p-4 rounded justify-evenly flex"
 			link="styles.css"
 			bind="cars" 
 			template="/doodads/grid/grid.html"
 			data-map="Year|Make|Model|Category:Body Style"
 			flex=":2:|3|3|4"
-		></doo-ui>
+		></doo-html>
 	</body>
 </html>
 

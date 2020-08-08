@@ -53,7 +53,7 @@
 		</div>	
 		<h3>bar/bar.html - binding data from the global doo-bind element</h3>
 		<p>When using plain arrays, the data-map attribute is set to "0"</p>
-		<doo-ui
+		<doo-html
 			class="p-2 bg-gray-400" 
 			bind="menu"
 			data-map="0"
@@ -61,11 +61,11 @@
 			rounded="rounded"
 			bg="bg-gray-700"
 			text="text-white"
-		></doo-ui>
+		></doo-html>
 		
 		<h3>bar/bar.html - with local data-src</h3>
 		<p>When using the <i>data-src</i> attribute, that makes the dataset local to the component instance and is not affected when a menu item is added using the reactive form above</p>
-		<doo-ui 
+		<doo-html 
 			class="p-2 bg-blue-600"
 			bind="menu"
 			data-src="menu"
@@ -74,93 +74,93 @@
 			rounded="rounded"
 			bg="bg-gray-800"
 			text="text-white"
-		></doo-ui>
+		></doo-html>
 
 		<h3>pill/pill.html</h3>
-		<doo-ui class="pl-2 pr-2 pb-2 bg-gray-500" 
+		<doo-html class="pl-2 pr-2 pb-2 bg-gray-500" 
 			bind="pill"
 			data-map="0"
 			template="/doodads/pill/pill.html"
 			rounded="rounded-full"
-		></doo-ui>
+		></doo-html>
 
 		<h3>bar/bar-evenly.html</h3>
-		<doo-ui
+		<doo-html
 			class="p-2 bg-gray-600" 
 			bind="menu"
 			data-map="0"
 			template="/doodads/bar/bar-evenly.html"
-		></doo-ui>
+		></doo-html>
 		
 		<h3>bar/bar-1-n.html</h3>
-		<doo-ui
+		<doo-html
 			class="bg-teal-600 p-2 mt-2" 
 			bind="menu"
 			data-map="0"
 			template="/doodads/bar/bar-1-n.html"
-		></doo-ui>
+		></doo-html>
 		
 		<h3>bar/bar-n-1.html</h3>
-		<doo-ui
+		<doo-html
 			class="bg-teal-600 p-2 mt-2" 
 			bind="menu"   
 			data-map="0"
 			template="/doodads/bar/bar-n-1.html"
-		></doo-ui>
+		></doo-html>
 		
 		<h3>bar/bar-start.html</h3>
-		<doo-ui
+		<doo-html
 			class="bg-purple-600 p-2 mt-2" 
 			bind="menu2"        
 			data-src="menu2"
 			data-map="label"
 			template="/doodads/bar/bar-start.html"
-		></doo-ui>
+		></doo-html>
 		
 		<h3>bar/bar-center.html</h3>
-		<doo-ui
+		<doo-html
 			class="bg-purple-600 p-2 mt-2" 
 			bind="menu2"   
 			data-src="menu2"
 			data-map="label"
 			template="/doodads/bar/bar-center.html"
 		>
-		</doo-ui>
+		</doo-html>
 
 		<h3>bar/bar-end.html</h3>
-		<doo-ui
+		<doo-html
 			class="bg-purple-600 p-2 mt-2" 
 			bind="menu2"   
 			data-src="menu2"
 			data-map="label"
 			template="/doodads/bar/bar-end.html"
 		>
-		</doo-ui>
+		</doo-html>
 	
 		<h3>circle/circle.html</h3>
-		<doo-ui 
+		<doo-html 
 			bind="contacts"
 			template="/doodads/circle/circle.html"
 			data-map="avatar">
-		</doo-ui>
+		</doo-html>
 		
 		<h3>circle/circle2.html</h3>
-		<doo-ui 
+		<doo-html 
 			bind="contacts"
 			template="/doodads/circle/circle2.html"
 			data-map="fname.substring(0,1)|lname.substring(0,1)"
 			>
-		</doo-ui>
-		<doo-ui 
+		</doo-html>
+		<doo-html 
 			bind="contacts"
 			template="/doodads/bar/bar-2.html" 
 			data-map="fname|lname">
-		</doo-ui>
-		<doo-ui 
+		</doo-html>
+		<doo-html 
 			bind="contacts"
 			template="/doodads/bar/bar-3.html" 
 			data-map="avatar|fname|lname">
-		</doo-ui>	
+		</doo-html>	
 	</body>
 </html>
 
