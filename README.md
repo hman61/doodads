@@ -9,6 +9,6 @@ https://github.com/hman61/doodads/wiki/Documentation
 - No build configurations
 - Unlimited intuitive flexibility
 - Currently only one dependency but it is not required
--- tailwindcss
+  - tailwindcss
 - Encapsulates your CSS dependencies
--- Major CSS framework can co-exist without conflicts
+ - Major CSS frameworks can co-exist without conflicts
