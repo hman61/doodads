@@ -8,7 +8,6 @@ https://github.com/hman61/doodads/wiki/Documentation
 - 28Kb Codebase
 - No build configurations
 - Unlimited intuitive flexibility
-- Currently only one dependency but it is not required
+- Major CSS frameworks can co-exist without conflicts
+- Currently only one dependency (but not required)
   - tailwindcss
-- Encapsulates your CSS dependencies
- - Major CSS frameworks can co-exist without conflicts
