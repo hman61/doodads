@@ -1,11 +1,11 @@
-# Doo.ui.org - doodads 
+# DooHTML - doodads 
 https://github.com/hman61/doodads/wiki/Documentation
 
 ## Your Web Components on Steroids 
 ### Minimal Syntax - Maximum Performance
 - WYSYWIG HTML
 - Reactive data binding
-- 25K Codebase
+- 28Kb Codebase
 - No build configurations
 - Unlimited intuitive flexibility
 - Currently only one dependency but it is not required
