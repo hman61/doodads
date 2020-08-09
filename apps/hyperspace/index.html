@@ -13,8 +13,8 @@
 		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="preload" href="assets/css/main.css" as="style" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.ui.min.js"></script> -->
-		<script src="/dist/doo.ui.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.html.min.js"></script> -->
+		<script src="/dist/doo.html.min.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 		<script>
@@ -42,14 +42,14 @@
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<div class="inner">
-					<doo-ui 
+					<doo-html 
 						context="document"
 						bind="nav"
 						data-src="nav"
 						data-map="href|label"
 						template="./templates/nav.html"
 						
-					></doo-ui>	
+					></doo-html>	
 				</div>
 			</section>
 
@@ -69,12 +69,12 @@
 					</section>
 
 				<!-- One -->
-				<doo-ui
+				<doo-html
 					context="document"
 					bind="cards"
 					data-src="cards"
 					template="./templates/card.html"
-				></doo-ui>	
+				></doo-html>	
 
 				<!-- Two -->
 					<section id="two" class="wrapper style3 fade-up">
@@ -82,12 +82,12 @@
 							<h2>What we do</h2>
 							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
 							<div class="features">
-								<doo-ui
+								<doo-html
 									context="document"
 									bind="features"
 									data-src="features"
 									template="./templates/feature.html"
-								></doo-ui>	
+								></doo-html>	
 							</div>
 							<ul class="actions">
 								<li><a href="#" class="button">Learn more</a></li>
@@ -140,12 +140,12 @@
 										</li>
 										<li>
 											<h3>Social</h3>
-											<doo-ui 
+											<doo-html 
 												context="document"
 												bind="social"
 												data-src="social"
 												template="./templates/social.html"
-											></doo-ui>	
+											></doo-html>	
 										</li>
 									</ul>
 								</section>

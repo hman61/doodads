@@ -1,5 +1,5 @@
 
-//import Doo from  '/js/Doo.ui.js'
+//import Doo from  '/js/doo.html.js'
 export default class Home extends Doo {
 	constructor() {
 		super()
