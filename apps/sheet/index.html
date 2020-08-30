@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>	
+	<title>Doo.HTML & Google Sheets</title>
+	<meta charset="utf-8" />
+	<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="preload" href="/assets/css/fontawesome-all.min.css" as="style" />
+	<!-- <link rel="preload" href="/assets/css/doo/doo-base.css" as="style" />
+	<link rel="preload" href="images/firefly-lights-bathroom.jpg" as="image" />
+	<link rel="preload" href="images/Frog-Island_Front-large.jpg" as="image" />
+	<link rel="preload" href="images/Frog-Island_Inside-back.jpg" as="image" />
+	<link rel="preload" href="images/BugBQ-3.jpg" as="image" /> -->
+	<!-- <link rel="preload" href="/assets/css/twenty.css" as="style" /> -->
+	<link rel="preload" href="/assets/css/industrious.css" as="style" />
+	<link rel="preload" as="script" href="/dist/doo.html.min.js">
+
+	<link rel="stylesheet" href="/assets/css/fontawesome-all.min.css" />
+	<!-- <link rel="stylesheet" href="/assets/css/twenty.css" /> -->
+	<link rel="stylesheet" href="/assets/css/industrious.css" />
+
+	<link rel="stylesheet" href="/assets/css/doo/doo-base.css" />
+
+	<script src="/dist/tabletop.js"></script>
+	<!-- <script src="/dist/0.doo.html.min.js"></script> -->
+	<script type="module" src="/dist/js/doo.html.js"></script>
+
+	<doo-bind>
+		<data name="cards" data-fetch="key|https://docs.google.com/spreadsheets/d/10NNla5NGs_thRxXHk1fUq8n8ey-0D_AcWm6b_3SEBVk/pubhtml|worksheet|cards" />
+	</doo-bind>
+	<style>
+		.doo-logo {
+			background-size: 2.8rem;
+			margin-top: 0.8rem;
+			margin-bottom: 0.8rem;
+		}
+		#banner::after { 
+			background: linear-gradient(135deg, #4454cc 0%, #111111 74%);
+		}
+		#banner {
+			margin-top: 4rem;
+		}
+		.doo-features li {
+			list-style: none !important;
+		}	
+		#sidebar {
+			position:fixed;
+			top:0;
+			z-index:10000;
+			width:100%;
+		}
+		#intro {
+			padding-top:0;
+		}
+  	
+	</style>
+</head>
+<body id="intro">
+	<!-- Banner -->
+	<!-- <section id="sidebar">
+		<div class="inner">
+			<doo-nav  
+				bind="nav"
+				data-map="href|label"
+				template="./templates/nav.html"
+			></doo-nav>
+		</div>
+	</section> -->
+	<div id="wrapper">
+		<!-- <section id="banner">
+			<div  class="inner" style="text-transform: initial;">
+				<doo-html
+					context="document"
+					bind="pics"
+					template="./templates/banner.html"
+				></doo-html>
+			</div>
+		</section>
+ -->
+	
+		<section id="one" class="wrapper">
+			<div class="inner">
+				<header class="special">
+					<h2>Card Example</h2>
+				</header>			
+				<doo-html 
+					bind="cards"
+					data-map="img|label"
+					template="./templates/card2.html"
+				></doo-html>
+			</div>
+		</section>
+	
+	</div>
+ </body>
+	<!--
+		Industrious by TEMPLATED
+		templated.co @templatedco
+		Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+	-->
+ </html>

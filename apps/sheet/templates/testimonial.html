@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<template>
+    <section>
+        <link rel="preload" href="/assets/css/industrious.css" as="style" />
+        <link rel="stylesheet" href="/assets/css/industrious.css" />
+
+    <section class="testimonials">
+        <section bind="${bind}">
+            <div class="content">
+                <blockquote>
+                    <p>{{ lorem() }}</p>
+                </blockquote>
+                <div class="author">
+                    <div class="image">
+                        <img src="{{ img }}" alt="" />
+                    </div>
+                    <p class="credit">- <strong>{{ name }}</strong> <span>{{ title }}</span></p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <style>
+        blockquote, p {
+            color:#333
+        }
+    </style>
+    </section>    
+</template>

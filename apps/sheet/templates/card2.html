@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<template>
+    <section>
+        <link rel="preload" href="/assets/css/solidstate.css" as="style" />
+		<link rel="stylesheet" href="/assets/css/solidstate.css" />
+        <ul class="features">
+            <article bind="${bind}">
+                <a href="#" class="image fit"><img src="{{ img }}" alt="" /></a>
+                <h3 class="major">{{ label }}</h3>
+                <p style="color:aliceblue">{{ lorem() }}</p>
+                <a href="#" class="special">Learn more</a>
+            </article>
+            
+        </ul>
+        <style>
+            img {
+                max-height: 27rem;
+                overflow: hidden;
+            }
+        </style>
+    </section>
+
+</template>        
