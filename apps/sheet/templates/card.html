@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <template>
-    <section id="${id}" class="wrapper style1 spotlights">
-        <section bind="${bind}" class="wrapper style2 spotlights">
-            <a href="#" class="image fit" style="background-image: url(${1});"><img class="fit" xstyle="display:none" src="${1}" alt="" data-position="center center" /></a>
-            <div class="content">
-                <div class="inner">
-                    <h2>${2}</h2>
-                    <p>${3}</p>
-                    <a href="#" class="button">Learn more</a>
-                </div>
-            </div>
-        </section>
+    <section>
+        <link rel="preload" href="/assets/css/solidstate.css" as="style" />
+		<link rel="stylesheet" href="/assets/css/solidstate.css" />
+        <ul class="features">
+            <article bind="${bind}">
+                <a href="#" class="image fit"><img src="${1}" alt="" /></a>
+                <h3 class="major">${2}</h3>
+                <p style="color:aliceblue">${3}</p>
+                <a href="#" class="special">Learn more</a>
+            </article>
+        </ul>
+        <style>
+            img {
+                max-height: 27rem;
+                overflow: hidden;
+            }
+        </style>
     </section>
 
 </template>        
+
