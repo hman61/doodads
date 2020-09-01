@@ -17,25 +17,52 @@
 		<script src="/dist/doo.html.min.js"></script>
 
 		<!-- <script type="module" src="/dist/js/doo.html.js"></script> -->
+		<script type="module">
+			import "./Background.js"
+		</script> 
 
 		<doo-bind data-sheet-key="https://docs.google.com/spreadsheets/d/10NNla5NGs_thRxXHk1fUq8n8ey-0D_AcWm6b_3SEBVk/pubhtml">
 			<data name="frogs" data-fetch="worksheet|frogs" />
 		</doo-bind>
+		<template id="t1"></template>
 	</head>
 	<body id="intro">
+
+		<doo-background
+			data-sheet-key="https://docs.google.com/spreadsheets/d/10NNla5NGs_thRxXHk1fUq8n8ey-0D_AcWm6b_3SEBVk/pubhtml"
+			bind="background" 
+			template="#t1"
+			target="#coolio"
+			data-poll="3000"
+		></doo-background>
+
+		<doo-background
+		data-sheet-key="https://docs.google.com/spreadsheets/d/10NNla5NGs_thRxXHk1fUq8n8ey-0D_AcWm6b_3SEBVk/pubhtml"
+		bind="banner" 
+		template="#t1"
+		target="#banner"
+		data-poll="1000"
+	></doo-background>
+
+		<section id="foolio">foolio</section>
+
+		<section id="coolio">Coolio</section>
+
 		<div id="wrapper">
 			<section id="one" class="wrapper">
 				<div class="inner">
 					<header class="special">
-						<h2>Card Example</h2>
+						<h2 id="banner">Card Example</h2>
 					</header>			
 					<doo-html 
 						bind="frogs"
-						data-map="img|label|lorem()"
+						data-map="img"
 						template="./templates/card.html"
 					></doo-html>
 				</div>
 			</section>
 		</div>
+
+
 	</body>
  </html>
