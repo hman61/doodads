@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello World</title>
+    <title>Doodads - Hello World</title>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.html.min.js"></script> -->
-    <script  src="/dist/doo.ui.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.html@latest/dist/doo.html.min.js"></script> -->
+    <script  src="/dist/doo.html.min.js"></script>
     <!-- <script type="module" src="/dist/js/doo.html.js"></script> -->
     <link href="/assets/css/styles.css" rel="preload" as="style" />
     <link href="/assets/css/styles.css" rel="stylesheet" />
-    <link rel="preload" href="/assets/css/doo/doo-flex-form.css" as="style" >
-		<link rel="stylesheet" href="/assets/css/doo/doo-flex-form.css" >
+    <link rel="preload" href="/assets/css/doo/doo-logo.css" as="style" >
+		<link rel="stylesheet" href="/assets/css/doo/doo-logo.css" >
 
     <script defer type="module">
       Doo.define(
@@ -28,7 +28,7 @@
   <script>
     const info = [
       {
-        company:'Doo.HTML',
+        company:'DooHTML',
         fname:'Doolio',
         lname:'Doe',
         city: 'Lake Oswego',
@@ -46,16 +46,9 @@
         {href:'/apps/html5up/index.html',label:'HTML5 UP - Solid State'}
       ]  
   </script>
-</head>
-
-<body class="bg-gray-500">
-  <div class="flex flex-1 justify-evenly">
-    <div class="doo-logo flex flex-1">&nbsp;| examples</div>
-  </div>
-
   <template id="t1">
     <section>
-      <h2 bind="greeting" style="color:brown;">Hello {{say}}!</h2>
+      <h2 bind="greeting" style="color:silver;">Hello {{say}}!</h2>
     </section>
   </template>
   <template id="t2">
@@ -63,32 +56,49 @@
       <h3 bind="greeting2">Hello {{say}}</h3>
       <style> 
         section {
-          width: 25%;
           border: solid thin silver;
           margin-bottom: 1rem;
+          white-space: nowrap;
+          padding: 0 0.75rem; 
         }
       </style>
     </section>
   </template>
 
-  <center>
-    <doo-hello template="#t1"></doo-hello>
-    <doo-hello template="#t2"></doo-hello>
+</head>
+<body class="bg-gray-800">
+  <div class="flex flex-1 justify-evenly background-color: black">
+    <div class="doo-logo flex flex-1">&nbsp;| examples</div>
+    <a class="p-4" target="docs" href="https://github.com/hman61/doodads/wiki/Documentation">Doocumentation</a>
+  </div>
+  <div class="flex justify-evenly ">
+    <div class="flex-1 px-4 flex-center">
+      <doo-hello template="#t1"></doo-hello>
+      <doo-hello template="#t2"></doo-hello>
+      CodePen: <a href="https://codepen.io/hman61/pen/VwwJQrG" target="codepen">Hello World</a>
 
-    <doo-ui 
-      bind="nav"
-      data-src="nav"
-      template="/doodads/nav/nav.html"
-      data-map="href|label" >
-    </doo-ui>
+    </div>
+    <div class="flex-2 p-4 flex-center">
+      <doo-html 
+        context="document"      
+        class="flex justify-center"
+        bind="info"
+        data-src="info"
+        template="/doodads/card/card.html" 
+        data-map="company|fname|lname|city|phone|caption">
+      </doo-html>
+    </div>  
+    <div class="flex-1 p-4 flex-center">
+      <doo-html 
+        bind="nav"
+        data-src="nav"
+        template="/doodads/nav/nav.html"
+        data-map="href|label" >
+      </doo-html>
+    </div>
+  </div>
+  <style>
 
-    <doo-ui 
-      class="flex justify-center mt-2"
-      bind="info"
-      data-src="info"
-      template="/doodads/card/card.html" 
-      data-map="company|fname|lname|city|phone|caption">
-    </doo-ui>
-  </center>
-  </body>
+  </style>
+</body>
 </html>
