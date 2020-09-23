@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<template>
+  <section class="${class}">
+    <link href="/assets/css/styles.css" rel="preload" as="style" />
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+    <section bind="${bind}" class="max-w-sm w-full lg:max-w-full lg:flex justify-around">
+      <div
+        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+      >
+        <div class="mb-8">
+          <div
+          class="tagline mb-8 h-24 pb-4 lg:h-auto lg:w-48 flex-none bg-cover rounded-md text-center overflow-hidden"
+        >${1}</div>
+          <p class="text-sm text-gray-600 flex items-center">
+            &#128274; Members only 
+          </p>
+          <div class="doo-apply text-gray-900 font-bold text-xl mb-2">${6}</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-20 h-20 flex justify-center fa-align-center rounded-full mr-4 avatar bg-gray-300" style="font-size: 3rem; align-items: flex-end;">
+            <img src="/favicon.png" />
+          </div> 
+          <div class="text-sm">
+            <p class="grid"><img src="${7}"/></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+        .tagline {
+          background-color: gray;
+          width: 95%;
+        }
+        @media (max-width: 479px) {
+          .tagline {
+                font-size: 6rem;
+          }  
+        }  
+        @media (min-width: 479px) {
+          .tagline {
+            font-size: 2.4rem;
+            padding-top: 1rem;
+          }
+        }  
+
+    </style>
+
+  </section>
+</template>

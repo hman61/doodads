@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@0.9.11/dist/doo.ui.min.js"></script> -->
+    <!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
+    <script type="module" src="/dist/js/doo.html.js"></script>
+
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+
+    <script defer type="module">
+      Doo.define(
+        class Hello extends Doo {
+          constructor() {
+            super();
+            this.template = this.getAttribute("template");
+            this.data = {
+              greeting: { say: "World" },
+              greeting2: [{ say: "USA" }, { say: "Finland" }],
+            };
+          }
+        }
+      );
+      // Doo.define(
+      //   	class Ui extends Doo {
+		
+      //     constructor() {
+      //       super()
+      //       this.data = {}
+      //     }
+      //     async connectedCallback() {
+      //             this.data[this.getAttribute('data-name')] = await this.getDataObj(this.getAttribute('data-fetch'))
+      //       this.template = this.getAttribute('template')
+      //       alert(this.tempalte)
+      //       super.connectedCallback()
+      //     }
+      //   }
+      // )
+
+
+
+    </script>
+<script>
+window.coolio = [{
+  fname:'Henrik',
+  lname: 'Javen',
+  city: 'Lake Oswego',
+  phone: '310 555-1212'
+}]
+
+
+var x = {"x":"Global"}
+
+  function test() {
+    let element = document.querySelectorAll('.doo-apply')
+    elem = [...element];
+    let newStyle = document.createElement('style')
+    debugger
+    for(let i=0,len=elem.length;i<len;i++) {
+
+      let klasses = elem[i].classList
+      var rules = document.styleSheets[0].rules || document.styleSheets[0].cssRules
+      let newRules = []
+      klasses.forEach( item => {
+        for(let x=0;x<rules.length;x++) {
+              if (rules[x].selectorText === '.' + item) {
+                newRules.push('\t' + rules[x].style.cssText)
+                break
+              }
+        }
+      })
+      newStyle.innerHTML += '\n.doo-applied-' + i + ' {\n' + newRules.join('\n') + '\n}'
+      elem[i].removeAttribute('class')  
+      elem[i].classList.add('doo-applied-' + i)  
+
+    }
+    document.body.appendChild(newStyle)
+  }
+</script>
+<doo-bind>
+ <data name="coolio" data-fetch="window.coolio"  />
+  
+</doo-bind>
+
+
+  <body>
+
+    <input onclick="PrintRules()" type="button" value="Print Rules" /><br />
+     RULES:
+     <textarea id="rules" cols="40" rows="30"></textarea>
+     <input onclick="test()" type="button" class="button" value="List Rules" /><br />
+ 
+
+    <template id="t1">
+      <section>
+        <h3 data-src="this.data" for-each="greeting" style="color: red;">
+          Hello {{say}}!
+        </h3>
+      </section>
+    </template>
+    <template id="t2">
+      <section>
+        <h1 data-src="this.data" for-each="greeting2">Hello to {{say}}!</h1>
+      </section>
+    </template>
+    <center>
+      <!-- <doo-hello template="#t1"></doo-hello>
+      <doo-hello template="#t2"></doo-hello> -->
+
+       <!--
+            <doo-ui data-name="xyz" data-fetch="const.test" template="/doodad/card.html" 
+            data-map="lname,fname,city" />
+       -->
+       <!-- <doo-ui data-name="contacts" data-fetch="window.coolio" template="/doodads/bar/bar3.html" 
+       data-map="fname,lname,city"></doo-ui>
+
+       <doo-ui data-name="contacts" data-fetch="window.coolio" template="/doodads/card/card2.html" 
+       data-map="fname,phone"></doo-ui> -->
+ 
+
+      <h3 class="doo-apply w-24 bg-gray-300 rounded mb-2"><a href="apps/contacts/index.html">Contacts</a></h3>
+      <h3 class="doo-apply w-24 bg-gray-300 rounded-full mb-2"><a href="apps/olympics/index.html">Olympics</a></h3>
+      <h3 class="doo-apply w-48 bg-gray-300 rounded mb-2"><a href="apps/funcsample/index.html">Computed Functions Sample</a></h3>
+        
+      
+
+
+      <doo-html bind="coolio" context="document" template="/doodads/card/card.html" 
+            data-map="fname,lname,city,phone,bob"></doo-html>
+
+      <div
+      class="doo-apply  py-2 px-4 font-semibold text-color-red-200 bg-gray-500 h-48 lg:h-auto lg:w-48 flex-none bg-cover xrounded-t xlg:rounded-t-none xlg:rounded-l text-center align-middle border-full rounded-full overflow-hidden"
+      style="font-size: 8rem;"
+    >Coolio</div>
+
+ 
+    </center>
+      <script>
+      function PrintRules() {
+      var rules = document.styleSheets[0].rules || document.styleSheets[0].cssRules
+          for(var x=0;x<rules.length;x++) {
+              document.getElementById("rules").innerHTML += rules[x].cssText + "\n";
+          }
+      }
+      </script>
+  
+  
+  
+
+  </body>
+</html>

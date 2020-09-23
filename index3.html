@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@0.9.11/dist/doo.ui.min.js"></script> -->
+    <!-- <script type="module" src="/dist/js/doo.ui.js"></script> -->
+    <script type="module" src="/dist/js/doo.html.js"></script>
+
+    <link href="/assets/css/styles.css" rel="preload" as="style" />
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+
+<script defer>
+const contact = [{
+  fname:'Henrik',
+  lname: 'Javen',
+  city: 'Lake Oswego',
+  phone: '310 555-1212',
+  state: 'Oregon'
+}]
+
+
+var x = {"x":"Global"}
+
+  function test() {
+    let element = document.querySelectorAll('.doo-apply')
+    elem = [...element];
+    let newStyle = document.createElement('style')
+    for(let i=0,len=elem.length;i<len;i++) {
+      elem[i].classList.remove('doo-apply')
+      let klasses = [...elem[i].classList]
+
+      var rules = document.styleSheets[0].rules || document.styleSheets[0].cssRules
+      var rules2 = document.styleSheets[1].rules || document.styleSheets[1].cssRules
+rules = [...rules];
+      if (rules2) {
+
+      rules = [...rules2].concat(rules) 
+}
+      let newRules = []
+    //  console.log()
+      klasses.forEach( item => {
+        for(let x=0;x<rules.length;x++) {
+              if (rules[x].selectorText === '.' + item) {
+                console.log(item, rules[x].style.cssText)
+                newRules.push('\t' + rules[x].style.cssText)
+                break
+              }
+        }
+      })
+      newStyle.innerHTML += '\n.doo-applied-' + i + ' {\n' + newRules.join('\n') + '\n}'
+      elem[i].removeAttribute('class')  
+      elem[i].classList.add('doo-applied-' + i)  
+
+    }
+    document.body.appendChild(newStyle)
+  }
+</script>
+<doo-bind>
+ <data name="coolio" data-fetch="contact"  />
+  
+</doo-bind>
+</head>
+
+
+  <body>
+<!-- 
+    <input onclick="PrintRules()" type="button" value="Print Rules" /><br />
+     RULES:
+     <textarea id="rules" cols="40" rows="30"></textarea>
+-->
+     <input onclick="test()" type="button" class="button" value="List Rules" /><br />
+  
+
+    <center>
+      
+
+
+      <doo-html 
+        bind="coolio"
+        context="document" 
+        template="/doodads/card/card9.html" 
+        data-map="fname|lname|city|phone|state"
+      ></doo-html>
+
+      <!-- <div
+        class="doo-apply  py-2 px-4 font-semibold text-color-red-200 bg-gray-500 h-48 lg:h-auto lg:w-48 flex-none bg-cover xrounded-t xlg:rounded-t-none xlg:rounded-l text-center align-middle border-full rounded-full overflow-hidden"
+      >Coolio</div> -->
+
+ 
+    </center>
+      <script>
+      function PrintRules() {
+      var rules = document.styleSheets[0].rules || document.styleSheets[0].cssRules
+          for(var x=0;x<rules.length;x++) {
+              document.getElementById("rules").innerHTML += rules[x].cssText + "\n";
+          }
+      }
+      </script>
+  
+  
+  
+
+  </body>
+</html>
