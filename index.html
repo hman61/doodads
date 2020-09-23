@@ -4,8 +4,8 @@
     <title>Hello World</title>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.html@latest/dist/doo.html.min.js"></script> -->
-    <script  src="/dist/doo.html.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/hman61/doo.ui@latest/dist/doo.html.min.js"></script> -->
+    <script  src="/dist/doo.ui.min.js"></script>
     <!-- <script type="module" src="/dist/js/doo.html.js"></script> -->
     <link href="/assets/css/styles.css" rel="preload" as="style" />
     <link href="/assets/css/styles.css" rel="stylesheet" />
@@ -34,35 +34,7 @@
         city: 'Lake Oswego',
         phone: '310 555-1212',
         caption: 'Fast, Clean & Powerful'
-      },
-      {
-        company:'Grid',
-        fname:'Doolio',
-        lname:'Doe',
-        city: 'Lake Oswego',
-        phone: '310 555-1212',
-        caption: 'Fast, Infinite Scrollable & Sortable Grid',
-        img: '/_data/grid.jpg'
-
-      },
-      {
-        company:'Doo.HTML',
-        fname:'Doolio',
-        lname:'Doe',
-        city: 'Lake Oswego',
-        phone: '310 555-1212',
-        caption: 'Fast, Clean & Powerful'
-      },
-      {
-        company:'Bars',
-        fname:'Doolio',
-        lname:'Doe',
-        city: 'Lake Oswego',
-        phone: '310 555-1212',
-        caption: 'Fast, Clean & Powerful'
       }]
-      
-      
 
       const nav = [
         {href:'/apps/grids/index.html',label:'Grids'},
@@ -103,23 +75,20 @@
     <doo-hello template="#t1"></doo-hello>
     <doo-hello template="#t2"></doo-hello>
 
-    <doo-html 
+    <doo-ui 
       bind="nav"
       data-src="nav"
       template="/doodads/nav/nav.html"
       data-map="href|label" >
-    </doo-html>
+    </doo-ui>
 
-    <doo-html 
+    <doo-ui 
       class="flex justify-center mt-2"
       bind="info"
       data-src="info"
-      template="/doodads/card/card2.html" 
-      data-map="company|fname|lname|city|phone|caption|img"
-      context="document">
-      
-    </doo-html>
-      
+      template="/doodads/card/card.html" 
+      data-map="company|fname|lname|city|phone|caption">
+    </doo-ui>
   </center>
   </body>
 </html>
