@@ -32,15 +32,22 @@ Doo.define(
 			this.scrollElem.parentElement.scrollTop = 0
 		}
 
-		addMore(cnt) {
+		async addMore(cnt) {
 			this.lastPage = null
 			let data = new Mock(this.data[this.defaultDataSet], cnt).reverse()
 			this.data[this.defaultDataSet].reverse()
 			Doo.DAO.append(this.defaultDataSet, data, 'top')
 			this.data[this.defaultDataSet] = Doo.DAO.getData(this.defaultDataSet)
+
 			this.setScrollContainerHeight()
-			this.render(this.defaultDataSet, 0)
-			this.scrollElem.parentElement.scrollTop = 0
+			this.setDataFilter(this.defaultDataSet) 	
+
+			await this.render(this.defaultDataSet, 0)
+			this.rendering = false
+			if (this.container) {
+				this.container.scrollTop = 0
+			}
+
 			this.clearChildren()
 		}	
 
