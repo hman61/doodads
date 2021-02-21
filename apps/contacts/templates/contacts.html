@@ -3,12 +3,11 @@
 	<section>
         <link rel="stylesheet" href="/assets/css/doo/doo-flex-grid.css">
 		<div class="find" style="margin: 0.5rem 0;">Find:
-			<input type="text" onkeyup="Contacts[0].find(this)" class="input is-medium" placeholder="Search ..." />
+			<input type="search" oninput="Contacts[0].find(event)" class="input is-medium"  placeholder="Search..."/>
 			<div id="footer" class="total"  bind="contacts" data-norepeat>
 				<i>Found: {{ found(contacts) }} / <b>{{ count(contacts) }}</b></i>
 			</div>		
 		</div>
-
 
  		<div class="container">
             <div class="fhead" data-src="[0]" bind="dummy" >
