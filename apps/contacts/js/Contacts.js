@@ -12,27 +12,6 @@ Doo.define(
 				[this.defaultDataSet]: Doo.DAO.getData(this.defaultDataSet)
 			}
 		}
-		find(elem) {
-			let filterKey = elem.value.trim().length ? elem.value.trim() : ''
-			let delay = this.data[this.defaultDataSet] && this.data[this.defaultDataSet].length > 1000 ? 700 : filterKey.length > 3 ? 1 : 500
-
-			try {
-				if (elem.inputType === 'deleteContentBackward' && this.foundRecords > 100) {
-					delay = 700
-				}
-			} catch (err) {
-				// justy in case the browser doesn't suppoer 'deleteContentBackward'
-			}
-			if (this.filterTimeoutID) {
-				clearTimeout(this.filterTimeoutID)
-			}
-			this.filterTimeoutID = setTimeout(() => {
-					this.filterKey = elem.value
-					this.setDataFilter(this.defaultDataSet) 	
-					this.render()
-		
-			}, delay)
-		}
 
 		async add(elem) {
 			this.lastPage = null
