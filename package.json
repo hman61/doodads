@@ -1,6 +1,6 @@
 {
   "name": "doodads",
-  "version": "0.20.6",
+  "version": "0.30.4",
   "description": "Doo.HTML Example Project",
   "scripts": {
     "start": "ws --spa index.html"
