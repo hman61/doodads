@@ -47,5 +47,12 @@ Doo.define(
 			this.clearChildren()
 		}	
 
+		sortBy(elem, column) {
+			let spin = this.shadow.querySelector('.doo-spin');
+			spin.style.display = 'block'
+			super.sortBy(elem, column)
+			spin.style.display = 'none'
+		}
+
 	}
 )

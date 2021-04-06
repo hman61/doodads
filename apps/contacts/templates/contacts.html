@@ -6,10 +6,11 @@
 			<input type="search" oninput="Contacts[0].find(event)" class="input is-medium"  placeholder="Search..."/>
 			<div id="footer" class="total"  bind="contacts" data-norepeat>
 				<i>Found: {{ found(contacts) }} / <b>{{ count(contacts) }}</b></i>
-			</div>		
+			</div>
 		</div>
 
  		<div class="container">
+            <div class="doo-spin" style="display: none"></div>
             <div class="fhead" data-src="[0]" bind="dummy" >
                 <div class="small">
                     <span data-sort="false" >Row#</span>
