@@ -12,9 +12,6 @@
  		<div class="container">
             <div class="fhead" data-src="[0]" bind="dummy" >
                 <div class="small">
-                    <span data-sort="false" >Row#</span>
-                </div>
-                <div class="small">
                     <span onclick="self.sortBy(this, 'userId')"  class="doo-sort">ID</span>
                 </div>
                 <div>
@@ -23,7 +20,7 @@
                 <div class="small">
                     <span onclick="self.sortBy(this, 'middle')"  class="doo-sort">M.I</span>
                 </div>
-                <div >
+                <div>
                     <span onclick="self.sortBy(this, 'lname')"   class="doo-sort">Last Name</span>
                 </div>
                 <div>
@@ -33,7 +30,6 @@
 
             <div class="fbody">
                 <div data-src="this.data" bind="contacts">
-					<div class="small number">{{ row() }}</div>
 					<div class="small number">{{ userId }}</div>
                     <div>{{ fname }}</div>
                     <div class="small" style="text-transform: capitalize;">{{ middle }}</div>
@@ -41,6 +37,17 @@
                     <div>{{ location.city }}</div>
                 </div>
 			</div>
-        </div>		
+        </div>
+        <style>
+            .selected-row {
+                background-color: #f2dede !important;
+            }
+
+            @media screen and (max-width: 600px) { 
+                .fbody data > div div:first-child::before {
+                    content: 'ID:';
+                }    
+            }    
+        </style>		
 	</section>
 </template>
