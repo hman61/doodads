@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <template>
 	<section>
-        <link rel="stylesheet" href="/assets/css/doo/doo-flex-grid.css">
+        <link rel="stylesheet" href="/assets/css/doo/doo-flex-grid-dl-based.css">
 		<div class="find" style="margin: 0.5rem 0;">Find:
-			<input type="search" oninput="Contacts[0].find(event)" class="input is-medium"  placeholder="Search..."/>
+			<input type="search" oninput="Contacts2[0].find(event)" class="input is-medium"  placeholder="Search..."/>
 			<div id="footer" class="total"  bind="contacts" data-norepeat>
 				<i>Found: {{ found(contacts) }} / <b>{{ count(contacts) }}</b></i>
 			</div>		
 		</div>
 
- 		<div class="container">
-            <div class="fhead" data-src="[0]" bind="dummy" >
+ 		<div class="grid-container">
+            <dl class="grid-head" data-src="[0]" bind="dummy" >
+                <div class="small">
+                    <span data-sort="false" >Row#</span>
+                </div>
                 <div class="small">
                     <span onclick="self.sortBy(this, 'userId')"  class="doo-sort">ID</span>
                 </div>
@@ -20,55 +23,29 @@
                 <div class="small">
                     <span onclick="self.sortBy(this, 'middle')"  class="doo-sort">M.I</span>
                 </div>
-                <div>
+                <div >
                     <span onclick="self.sortBy(this, 'lname')"   class="doo-sort">Last Name</span>
                 </div>
                 <div>
                     <span onclick="self.sortBy(this, 'location.city')"  class="doo-sort">City</span>
                 </div>
-            </div>
+            </dl>
 
-            <div class="fbody">
-                <div data-src="this.data" bind="contacts">
+            <dl class="grid-body">
+                <div data-src="this.data" bind="contacts" onclick="self.click(this)">
+					<div class="small number">{{ row() }}</div>
 					<div class="small number">{{ userId }}</div>
                     <div>{{ fname }}</div>
                     <div class="small" style="text-transform: capitalize;">{{ middle }}</div>
 					<div>{{ lname }}</div>
                     <div>{{ location.city }}</div>
                 </div>
-			</div>
+			</dl>
         </div>
         <style>
-            .selected-row {
+            .danger {
                 background-color: #f2dede !important;
             }
-
-            @media screen and (max-width: 600px) { 
-                .fbody data > div div:first-child::before {
-                    content: 'ID::';
-                    min-width: 7rem;
-                    align-content: flex-start;
-                }    
-                .fbody data > div div:nth-child(2)::before {
-                    content: 'First Name:';
-                    min-width: 7rem;
-
-                }    
-                .fbody data > div div:nth-child(3)::before {
-                    content: 'Middle Initial:';
-                    min-width: 7rem;
-                }    
-                .fbody data > div div:nth-child(4)::before {
-                    content: 'Last Name:';
-                    min-width: 7rem !important;
-                }    
-                .fbody data > div div:nth-child(5)::before {
-                    content: 'City:';
-                    min-width: 7rem !important;
-                }    
-
-
-            }    
         </style>		
 	</section>
 </template>
