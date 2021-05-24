@@ -175,6 +175,10 @@
 }
 
 @media screen and (max-width: 600px) { 
+    .fhead > div{
+        background-color: rgb(46, 46, 46);
+        color: white;
+    }
     .fbody data > div {
         flex-direction: column;
         font-size: large; 
