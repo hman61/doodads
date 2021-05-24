@@ -13,7 +13,7 @@ Doo.define(
 			}
 		}
 
-		async add(elem) {
+		add(elem) {
 			this.lastPage = null
 			let inputs = elem.querySelectorAll('input')
 			let contact = {};
@@ -23,18 +23,19 @@ Doo.define(
 			contact.userId = this.data[this.defaultDataSet].length + 1
 			Doo.DAO.append(this.defaultDataSet, [contact], 'top')
 			this.data[this.defaultDataSet] = Doo.DAO.getData(this.defaultDataSet)
-			this.setScrollContainerHeight()
-			this.render(this.defaultDataSet, 0)
-			this.scrollElem.parentElement.scrollTop = 0
+			this.refreshContainer()
 		}
 
-		async addMore(cnt) {
+		addMore(cnt) {
 			this.lastPage = null
 			let data = new Mock(this.data[this.defaultDataSet], cnt).reverse()
 			this.data[this.defaultDataSet].reverse()
 			Doo.DAO.append(this.defaultDataSet, data, 'top')
 			this.data[this.defaultDataSet] = Doo.DAO.getData(this.defaultDataSet)
+			this.refreshContainer()
+		}	
 
+		async refreshContainer() {
 			this.setScrollContainerHeight()
 			this.setDataFilter(this.defaultDataSet) 	
 
@@ -43,9 +44,8 @@ Doo.define(
 			if (this.container) {
 				this.container.scrollTop = 0
 			}
-
 			this.clearChildren()
-		}	
+		}
 
 	}
 )
