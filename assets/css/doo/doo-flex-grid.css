@@ -113,30 +113,6 @@
     justify-content: flex-start;
 } 
 
-@media screen and (max-width: 600px) { 
-    .fbody data > div {
-        flex-direction: column;
-        font-size: large; 
-    }
-    .fbody data > div div {
-        max-width: initial;
-    }    
-    .small {
-        flex-grow: 1 !important;
-        width: unset !important;
-        min-width: none !important;
-        max-width: none !important;
-        text-overflow: initial !important;
-        overflow-x: initial !important; 
-        white-space: initial !important;
-        overflow: initial !important;
-        padding: 0.5rem 0.8rem 0.25rem !important;
-
-    }
-    
-
-}
-
 .arrow::after, .doo-sort::after {
     margin-left: 0.25rem;
     content: "\2195"; 
@@ -198,5 +174,24 @@
     text-align: end;
 }
 
-
+@media screen and (max-width: 600px) { 
+    .fbody data > div {
+        flex-direction: column;
+        font-size: large; 
+    }
+    .fbody data > div div {
+        max-width: initial;
+    }    
+    .small {
+        flex-grow: 1 !important;
+        width: unset !important;
+        min-width: none !important;
+        max-width: none !important;
+        text-overflow: initial !important;
+        overflow-x: initial !important; 
+        white-space: initial !important;
+        overflow: initial !important;
+        padding: 0.5rem 0.8rem 0.25rem !important;
+    }
+}
 
