@@ -201,13 +201,8 @@
         justify-content: flex-start !important;
     }
     .small {
-        xflex-grow: 1 !important;
         width: unset !important;
-        xmin-width: none !important;
         max-width: unset !important;
-        xtext-overflow: initial !important;
-        xoverflow-x: initial !important; 
-        xwhite-space: initial !important;
         overflow: initial !important;
         padding: 0.5rem 0.8rem 0.25rem !important;
     }
