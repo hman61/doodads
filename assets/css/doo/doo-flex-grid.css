@@ -207,5 +207,8 @@
         overflow: initial !important;
         padding: 0.5rem 0.8rem 0.25rem !important;
     }
+    .fbody data > div:nth-child(even) div {
+        background-color: white; 
+    }
 }
 
