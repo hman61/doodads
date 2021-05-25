@@ -210,5 +210,8 @@
     .fbody data > div:nth-child(even) div {
         background-color: white; 
     }
+    .doo-logo::before {
+        font-size: 1.5rem;
+    }
 }
 
