@@ -176,8 +176,16 @@
 
 @media screen and (max-width: 600px) { 
     .fhead > div{
-        background-color: rgb(46, 46, 46);
+        background-color: rgb(0, 0, 0);
         color: white;
+        font-size: large;
+        padding-bottom: .75rem;
+    }
+    .fhead .small {
+        padding-bottom: .75rem !important;
+    }
+    .fhead {
+        justify-content: space-evenly;
     }
     .fbody data > div {
         flex-direction: column;
@@ -185,15 +193,21 @@
     }
     .fbody data > div div {
         max-width: initial;
+    }
+    .fhead > div {
+        min-width: unset;
     }    
+    .number {
+        justify-content: flex-start !important;
+    }
     .small {
-        flex-grow: 1 !important;
+        xflex-grow: 1 !important;
         width: unset !important;
-        min-width: none !important;
-        max-width: none !important;
-        text-overflow: initial !important;
-        overflow-x: initial !important; 
-        white-space: initial !important;
+        xmin-width: none !important;
+        max-width: unset !important;
+        xtext-overflow: initial !important;
+        xoverflow-x: initial !important; 
+        xwhite-space: initial !important;
         overflow: initial !important;
         padding: 0.5rem 0.8rem 0.25rem !important;
     }
