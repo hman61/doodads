@@ -183,6 +183,7 @@
     }
     .fhead .small {
         padding-bottom: .75rem !important;
+        padding-right: 1rem !important;
     }
     .fhead {
         justify-content: space-evenly;
