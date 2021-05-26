@@ -63,3 +63,16 @@ body {
 .flex-1 {
     flex:1;
 }
+@media screen and (max-width: 600px) { 
+    .doo-logo::before {
+        font-size: 2rem;
+        padding-left: .2rem;
+        padding-top: .35rem;
+    }
+    .doodad-type {
+        display: none;
+    }
+    .doo-logo {
+        background-size: 10%;
+    }
+}
