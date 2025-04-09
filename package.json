@@ -9,6 +9,6 @@
   "license": "Apache 2.0",
   "repository": "https://github.com/hman61/doodads.git",
   "devDependencies": {
-    "local-web-server": "^5.3.0"
+    "local-web-server": "^5.4.0"
   }
 }
